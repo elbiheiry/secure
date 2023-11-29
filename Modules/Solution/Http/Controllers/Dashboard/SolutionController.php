@@ -1,16 +1,16 @@
 <?php
 
-namespace Modules\Service\Http\Controllers\Dashboard;
+namespace Modules\Solution\Http\Controllers\Dashboard;
 
 use App\Traits\ImageTrait;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Modules\Service\Entities\Service;
-use Modules\Service\Http\Requests\ServiceRequest;
+use Modules\Solution\Entities\Solution;
+use Modules\Solution\Http\Requests\SolutionRequest;
 
-class ServiceController extends Controller
+class SolutionController extends Controller
 {
     use ImageTrait;
 
@@ -20,9 +20,9 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $services = Service::select('id' , 'image' , 'slug')->orderByDesc('id')->get();
+        $solutions = Solution::select('id' , 'image' , 'slug')->orderByDesc('id')->get();
 
-        return view('service::index' , compact('services'));
+        return view('solution::index' , compact('solutions'));
     }
 
     /**
@@ -31,7 +31,7 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        return view('service::create');
+        return view('solution::create');
     }
 
     /**
@@ -39,7 +39,7 @@ class ServiceController extends Controller
      * @param Request $request
      * @return Renderable
      */
-    public function store(ServiceRequest $request)
+    public function store(SolutionRequest $request)
     {
         try {
             $data = [];
@@ -51,12 +51,12 @@ class ServiceController extends Controller
                 ];
             }
 
-            $data['image'] = $this->image_manipulate($request->image , 'services' , 770 , 365);
-            $data['slug'] = SlugService::createSlug(Service::class , 'slug' , $request->name_en , ['unique' => true]);
+            $data['image'] = $this->image_manipulate($request->image , 'solutions' , 1000 , 560);
+            $data['slug'] = SlugService::createSlug(Solution::class , 'slug' , $request->name_en , ['unique' => true]);
 
-            Service::create($data);
+            Solution::create($data);
 
-            $url = route('admin.services.index');
+            $url = route('admin.solutions.index');
 
             return add_response($url);
         } catch (\Throwable $th) {
@@ -71,26 +71,26 @@ class ServiceController extends Controller
      */
     public function show($id)
     {
-        return view('service::show');
+        return view('solution::show');
     }
 
     /**
      * Show the form for editing the specified resource.
-     * @param Service $service
+     * @param solution $solution
      * @return Renderable
      */
-    public function edit(Service $service)
+    public function edit(Solution $solution)
     {
-        return view('service::edit' , compact('service'));
+        return view('solution::edit' , compact('solution'));
     }
 
         /**
      * Update the specified resource in storage.
-     * @param ServiceRequest $request
-     * @param Service $service
+     * @param SolutionRequest $request
+     * @param Solution $solution
      * @return Renderable
      */
-    public function update(ServiceRequest $request, Service $service)
+    public function update(SolutionRequest $request, Solution $solution)
     {
         try {
             $data = [];
@@ -103,18 +103,18 @@ class ServiceController extends Controller
             }
 
             if ($request->image) {
-                $this->image_delete($service->image , 'services');
-                $data['image'] = $this->image_manipulate($request->image , 'services' , 770 , 365);
+                $this->image_delete($solution->image , 'solutions');
+                $data['image'] = $this->image_manipulate($request->image , 'solutions' , 1000 , 560);
             }
 
 
-            if ($request->name_en != $service->translate('en')->name) {
-                $data['slug'] = SlugService::createSlug(Service::class , 'slug' , $request->name_en , ['unique' => true]);
+            if ($request->name_en != $solution->translate('en')->name) {
+                $data['slug'] = SlugService::createSlug(Solution::class , 'slug' , $request->name_en , ['unique' => true]);
             }
 
-            $service->update($data);
+            $solution->update($data);
 
-            $url = route('admin.services.edit' , ['service' => $service->slug]);
+            $url = route('admin.solutions.edit' , ['solution' => $solution->slug]);
 
             return update_response($url);
         } catch (\Throwable $e) {
@@ -125,14 +125,14 @@ class ServiceController extends Controller
 
     /**
      * Remove the specified resource from storage.
-     * @param service $service
+     * @param Solution $solution
      * @return Renderable
      */
-    public function destroy(Service $service)
+    public function destroy(Solution $solution)
     {
-        $this->image_delete($service->image , 'services');
+        $this->image_delete($solution->image , 'solutions');
 
-        $service->delete();
+        $solution->delete();
 
         return redirect()->back();
     }

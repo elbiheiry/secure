@@ -15,5 +15,11 @@
                 Services
             </a>
         </li>
+        <li class="{{ request()->is('admin/solutions') || request()->is('admin/solutions/*') ? 'active' : '' }}">
+            <a href="{{ route('admin.solutions.index') }}">
+                <i class="fa fa-info"></i>
+                Solutions
+            </a>
+        </li>
     </ul><!--End Ul-->
 </aside>

@@ -1,17 +1,17 @@
 @extends('layouts.master')
 @section('content')
     <div class="page-head">
-        <i class="fa fa-list"></i> services
+        <i class="fa fa-list"></i> solutions
         <ul class="breadcrumb">
             <li><a href="{{ route('admin.dashboard') }}">
                     <i class="fa fa-home"></i>home</a>
             </li>
-            <li class="active">services </li>
+            <li class="active">solutions </li>
         </ul>
     </div>
     <!-- Page content ==========================================-->
     <div class="page-content">
-        <form class="row ajax-form" method="post" action="{{ route('admin.services.store') }}">
+        <form class="row ajax-form" method="post" action="{{ route('admin.solutions.store') }}">
             @csrf
             <div class="col-md-12 col-sm-12 form-group">
                 <label>Image</label>

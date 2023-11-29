@@ -1,18 +1,18 @@
 @extends('layouts.master')
 @section('content')
     <div class="page-head">
-        <i class="fa fa-list"></i> services
+        <i class="fa fa-list"></i> solutions
         <ul class="breadcrumb">
             <li><a href="{{ route('admin.dashboard') }}">
                     <i class="fa fa-home"></i>home</a>
             </li>
-            <li class="active">services </li>
+            <li class="active">solutions </li>
         </ul>
     </div>
     <!-- Page content ==========================================-->
     <div class="page-content">
-        <a href="{{ route('admin.services.create') }}" class="custom-btn green-bc">
-            <i class="fa fa-plus"></i> Add new service
+        <a href="{{ route('admin.solutions.create') }}" class="custom-btn green-bc">
+            <i class="fa fa-plus"></i> Add new solution
         </a>
         <div class="table-responsive-lg-lg">
             <table class="table table-bordered" id="datatable" style="width:100%">
@@ -25,20 +25,20 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($services as $index => $service)
+                    @foreach ($solutions as $index => $solution)
                         <tr>
                             <td>{{ $index + 1 }}</td>
                             <td>
-                                <img src="{{ $service->image_path }}" alt="logo" class="table-img">
+                                <img src="{{ $solution->image_path }}" alt="logo" class="table-img">
                             </td>
-                            <td>{{ $service->translate('en')->name }}</td>
+                            <td>{{ $solution->translate('en')->name }}</td>
                             <td>
-                                <a href="{{ route('admin.services.edit', ['service' => $service->slug]) }}"
+                                <a href="{{ route('admin.solutions.edit', ['solution' => $solution->slug]) }}"
                                     class="icon-btn green-bc">
                                     <i class="fas fa-edit"></i>
                                 </a>
                                 <a href="javascript:;" class="icon-btn red-bc delete-btn"
-                                    data-url="{{ route('admin.services.destroy', ['service' => $service->slug]) }}">
+                                    data-url="{{ route('admin.solutions.destroy', ['solution' => $solution->slug]) }}">
                                     <i class="fas fa-trash"></i>
                                 </a>
                             </td>

@@ -8,5 +8,6 @@
     "Message": true,
     "Permission": true,
     "Dashboard": true,
-    "Service": true
+    "Service": true,
+    "Solution": true
 }

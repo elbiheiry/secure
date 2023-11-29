@@ -1,0 +1,13 @@
+{
+    "name": "Solution",
+    "alias": "solution",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Solution\\Providers\\SolutionServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
