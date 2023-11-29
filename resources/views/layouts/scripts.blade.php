@@ -15,6 +15,7 @@
 <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.print.min.js"></script>
+<script src="{{ aurl('vendor/tinymce/js/tinymce/tinymce.min.js') }}"></script>
 <script src="{{ aurl('vendor/count-to/jquery.countTo.js') }}"></script>
 <script src="{{ aurl('vendor/file/file.js') }}"></script>
 <script src="{{ aurl('vendor/counterdown/countdown.js') }}"></script>

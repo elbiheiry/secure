@@ -9,5 +9,11 @@
                 Dashboard
             </a>
         </li>
+        <li class="{{ request()->is('admin/services') || request()->is('admin/services/*') ? 'active' : '' }}">
+            <a href="{{ route('admin.services.index') }}">
+                <i class="fa fa-list"></i>
+                Services
+            </a>
+        </li>
     </ul><!--End Ul-->
 </aside>

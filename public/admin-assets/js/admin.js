@@ -36,7 +36,7 @@ $(document).on('submit' , '.ajax-form' , function () {
         error : function (jqXHR) {
             var response = $.parseJSON(jqXHR.responseText);
             notification("danger", response ,"fas fa-times");
-            form.find(":submit").attr('disabled' , false).html('Save');
+            form.find(":submit").attr('disabled' , false).html('<span> <i class="fa fa-save"></i> save</span>');
         }
     });
     $.ajaxSetup({
