@@ -7,5 +7,6 @@
     "Client": true,
     "Career": true,
     "Branch": true,
-    "Blog": true
+    "Blog": true,
+    "Setting": true
 }

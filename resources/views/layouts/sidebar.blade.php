@@ -46,6 +46,12 @@
                 Branches
             </a>
         </li>
+        <li class="{{ request()->is('admin/social-links') || request()->is('admin/social-links/*') ? 'active' : '' }}">
+            <a href="{{ route('admin.links.index') }}">
+                <i class="fa fa-share-alt"></i>
+                Social links
+            </a>
+        </li>
         <li class="{{ request()->is('admin/messages') || request()->is('admin/messages/*') ? 'active' : '' }}">
             <a href="{{ route('admin.messages.index') }}">
                 <i class="fa fa-envelope"></i>
