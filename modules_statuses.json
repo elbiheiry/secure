@@ -9,5 +9,6 @@
     "Permission": true,
     "Dashboard": true,
     "Service": true,
-    "Solution": true
+    "Solution": true,
+    "Client": true
 }

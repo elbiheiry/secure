@@ -21,5 +21,11 @@
                 Solutions
             </a>
         </li>
+        <li class="{{ request()->is('admin/clients') || request()->is('admin/clients/*') ? 'active' : '' }}">
+            <a href="{{ route('admin.clients.index') }}">
+                <i class="fa fa-image"></i>
+                Business partners
+            </a>
+        </li>
     </ul><!--End Ul-->
 </aside>
