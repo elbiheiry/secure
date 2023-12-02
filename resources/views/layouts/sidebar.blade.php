@@ -27,5 +27,11 @@
                 Business partners
             </a>
         </li>
+        <li class="{{ request()->is('admin/careers') || request()->is('admin/careers/*') ? 'active' : '' }}">
+            <a href="{{ route('admin.careers.index') }}">
+                <i class="fa fa-user"></i>
+                Careers
+            </a>
+        </li>
     </ul><!--End Ul-->
 </aside>
