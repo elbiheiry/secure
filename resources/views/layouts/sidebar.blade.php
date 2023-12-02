@@ -34,6 +34,12 @@
                 Careers
             </a>
         </li>
+        <li class="{{ request()->is('admin/articles') || request()->is('admin/articles/*') ? 'active' : '' }}">
+            <a href="{{ route('admin.articles.index') }}">
+                <i class="fa fa-newspaper"></i>
+                Blog
+            </a>
+        </li>
         <li class="{{ request()->is('admin/branches') || request()->is('admin/branches/*') ? 'active' : '' }}">
             <a href="{{ route('admin.branches.index') }}">
                 <i class="fa fa-map-marker"></i>
