@@ -34,6 +34,12 @@
                 Careers
             </a>
         </li>
+        <li class="{{ request()->is('admin/branches') || request()->is('admin/branches/*') ? 'active' : '' }}">
+            <a href="{{ route('admin.branches.index') }}">
+                <i class="fa fa-map-marker"></i>
+                Branches
+            </a>
+        </li>
         <li class="{{ request()->is('admin/messages') || request()->is('admin/messages/*') ? 'active' : '' }}">
             <a href="{{ route('admin.messages.index') }}">
                 <i class="fa fa-envelope"></i>
