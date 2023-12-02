@@ -1,12 +1,6 @@
 {
     "Auth": true,
-    "SocialMedia": true,
-    "Settings": true,
-    "Home": true,
-    "About": true,
-    "Portofolio": true,
     "Message": true,
-    "Permission": true,
     "Dashboard": true,
     "Service": true,
     "Solution": true,

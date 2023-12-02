@@ -27,10 +27,17 @@
                 Business partners
             </a>
         </li>
-        <li class="{{ request()->is('admin/careers') || request()->is('admin/careers/*') ? 'active' : '' }}">
+        <li
+            class="{{ request()->is('admin/careers') || request()->is('admin/careers/*') || request()->is('admin/*/candidates') ? 'active' : '' }}">
             <a href="{{ route('admin.careers.index') }}">
                 <i class="fa fa-user"></i>
                 Careers
+            </a>
+        </li>
+        <li class="{{ request()->is('admin/messages') || request()->is('admin/messages/*') ? 'active' : '' }}">
+            <a href="{{ route('admin.messages.index') }}">
+                <i class="fa fa-envelope"></i>
+                Messages
             </a>
         </li>
     </ul><!--End Ul-->

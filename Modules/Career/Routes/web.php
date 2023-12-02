@@ -18,6 +18,6 @@ Route::middleware('auth:web')->name('admin.')->prefix('admin/')->group(function 
     Route::resource('careers' , CareerController::class)->except(['show']);
 
     Route::name('careers.candidates.')->controller(CandidateController::class)->group(function() {
-        Route::get('/{career}' , 'index')->name('index');
+        Route::get('/{career}/candidates' , 'index')->name('index');
     });
 });
