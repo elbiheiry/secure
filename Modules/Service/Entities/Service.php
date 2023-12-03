@@ -14,7 +14,7 @@ class Service extends Model implements TranslatableContract
     use HasFactory , Translatable , Sluggable , ImageTrait;
 
     protected $fillable = [
-        'id' , 'slug' ,'image'
+        'id' , 'slug' ,'image' , 'icon'
     ];
 
     public $translatedAttributes = [

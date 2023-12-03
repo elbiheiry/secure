@@ -15,12 +15,16 @@
             action="{{ route('admin.services.update', ['service' => $service->slug]) }}">
             @csrf
             @method('PUT')
-            <div class="col-md-6 col-sm-6 form-group">
-                <img src="{{ $service->image_path }}" alt="logo">
+            <div class="col-md-12 col-sm-12 form-group">
+                <img src="{{ $service->image_path }}" alt="logo" width="250">
             </div>
             <div class="col-md-6 col-sm-6 form-group">
                 <label>Image</label>
                 <input class="jfilestyle" type="file" name="image">
+            </div>
+            <div class="col-md-6 col-sm-6 form-group">
+                <label>Icon</label>
+                <input class="form-control" type="text" name="icon" value="{{ $service->icon }}">
             </div>
             @foreach (config('translatable.locales') as $locale)
                 <div class="col-md-6 col-sm-6 form-group">

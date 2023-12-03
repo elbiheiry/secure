@@ -15,9 +15,10 @@ class SolutionRequest extends FormRequest
      */
     public function rules()
     {
-        $data = [];
-
-        $data['image'] = $this->isMethod('post') ? ['required' , 'image' , 'mimes:jpeg,png,jpg,gif,svg' , 'max:2048'] : ['nullable' , 'image' , 'mimes:jpeg,png,jpg,gif,svg' , 'max:2048'];
+        $data = [
+            'image' => $this->isMethod('post') ? ['required' , 'image' , 'mimes:jpeg,png,jpg,gif,svg' , 'max:2048'] : ['nullable' , 'image' , 'mimes:jpeg,png,jpg,gif,svg' , 'max:2048'],
+            'icon' => ['required'  , 'string' , 'max:255']
+        ];
 
         foreach (config('translatable.locales') as $locale) {
             $data['name_' . $locale] = ['required' , 'string' , 'max:255'];
@@ -30,7 +31,8 @@ class SolutionRequest extends FormRequest
     public function attributes()
     {
         $data = [
-            'image' => 'Image'
+            'image' => 'Image',
+            'icon' => 'Icon'
         ];
 
         foreach (config('translatable.locales') as $locale) {

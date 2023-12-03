@@ -1,12 +1,12 @@
 <?php
 
-namespace Modules\Service\Http\Requests;
+namespace Modules\About\Http\Requests\Dashboard;
 
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
 
-class ServiceRequest extends FormRequest
+class AboutRequest extends FormRequest
 {
     /**
      * Get the validation rules that apply to the request.
@@ -16,12 +16,12 @@ class ServiceRequest extends FormRequest
     public function rules()
     {
         $data = [
-            'image' => $this->isMethod('post') ? ['required' , 'image' , 'mimes:jpeg,png,jpg,gif,svg' , 'max:2048'] : ['nullable' , 'image' , 'mimes:jpeg,png,jpg,gif,svg' , 'max:2048'],
-            'icon' => ['required' , 'string' ,'max:225']
+            'image' => $this->has('image') ? ['image' , 'mimes:jpeg,png,jpg,gif,svg' , 'max:2048'] : [],
+            'icon' => ['required_if:image,null']
         ];
 
         foreach (config('translatable.locales') as $locale) {
-            $data['name_' . $locale] = ['required' , 'string' , 'max:255'];
+            $data['title_' . $locale] = ['required' , 'string' , 'max:255'];
             $data['description_' . $locale] = ['required'];    
         }
 
@@ -36,7 +36,7 @@ class ServiceRequest extends FormRequest
         ];
 
         foreach (config('translatable.locales') as $locale) {
-            $data['name_' . $locale] = 'Name (' . strtoupper($locale) . ')';
+            $data['title_' . $locale] = 'Title (' . strtoupper($locale) . ')';
             $data['description_' . $locale] = 'Description (' . strtoupper($locale) . ')';
         }
 

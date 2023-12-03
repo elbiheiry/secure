@@ -20,7 +20,7 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $services = Service::select('id' , 'image' , 'slug')->orderByDesc('id')->get();
+        $services = Service::select('id' , 'image' , 'slug' , 'icon')->orderByDesc('id')->get();
 
         return view('service::index' , compact('services'));
     }
@@ -42,7 +42,11 @@ class ServiceController extends Controller
     public function store(ServiceRequest $request)
     {
         try {
-            $data = [];
+            $data = [
+                'image' => $this->image_manipulate($request->image , 'services' , 770 , 365),
+                'icon' => $request->icon,
+                'slug' => SlugService::createSlug(Service::class , 'slug' , $request->name_en , ['unique' => true])
+            ];
 
             foreach (config('translatable.locales') as $locale) {
                 $data[$locale] = [
@@ -50,9 +54,6 @@ class ServiceController extends Controller
                     'description' => $request['description_' . $locale],
                 ];
             }
-
-            $data['image'] = $this->image_manipulate($request->image , 'services' , 770 , 365);
-            $data['slug'] = SlugService::createSlug(Service::class , 'slug' , $request->name_en , ['unique' => true]);
 
             Service::create($data);
 
@@ -93,7 +94,9 @@ class ServiceController extends Controller
     public function update(ServiceRequest $request, Service $service)
     {
         try {
-            $data = [];
+            $data = [
+                'icon' => $request->icon
+            ];
 
             foreach (config('translatable.locales') as $locale) {
                 $data[$locale] = [

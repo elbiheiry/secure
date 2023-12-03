@@ -42,7 +42,11 @@ class SolutionController extends Controller
     public function store(SolutionRequest $request)
     {
         try {
-            $data = [];
+            $data = [
+                'icon' => $request->icon,
+                'image' => $this->image_manipulate($request->image , 'solutions' , 1000 , 560),
+                'slug' => SlugService::createSlug(Solution::class , 'slug' , $request->name_en , ['unique' => true])
+            ];
 
             foreach (config('translatable.locales') as $locale) {
                 $data[$locale] = [
@@ -50,9 +54,6 @@ class SolutionController extends Controller
                     'description' => $request['description_' . $locale],
                 ];
             }
-
-            $data['image'] = $this->image_manipulate($request->image , 'solutions' , 1000 , 560);
-            $data['slug'] = SlugService::createSlug(Solution::class , 'slug' , $request->name_en , ['unique' => true]);
 
             Solution::create($data);
 
@@ -93,7 +94,9 @@ class SolutionController extends Controller
     public function update(SolutionRequest $request, Solution $solution)
     {
         try {
-            $data = [];
+            $data = [
+                'icon' => $request->icon
+            ];
 
             foreach (config('translatable.locales') as $locale) {
                 $data[$locale] = [

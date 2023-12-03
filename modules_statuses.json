@@ -8,5 +8,6 @@
     "Career": true,
     "Branch": true,
     "Blog": true,
-    "Setting": true
+    "Setting": true,
+    "About": true
 }

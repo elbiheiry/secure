@@ -9,6 +9,21 @@
                 Dashboard
             </a>
         </li>
+        <li class="sub-menu">
+            <a rel="noreferrer" href="javascript:void(0);">
+                <i class="fa fa-info"></i>
+                About us
+                <i class="fa fa-angle-down"></i>
+            </a>
+            <ul
+                style="display : {{ request()->is('admin/about-us') || request()->is('admin/about-us/*') ? 'block' : '' }}">
+                <li class="{{ request()->is('admin/about-us') || request()->is('admin/about-us/*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.about.index') }}">
+                        - Static data
+                    </a>
+                </li>
+            </ul>
+        </li>
         <li class="{{ request()->is('admin/services') || request()->is('admin/services/*') ? 'active' : '' }}">
             <a href="{{ route('admin.services.index') }}">
                 <i class="fa fa-list"></i>
