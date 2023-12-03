@@ -22,6 +22,11 @@
                         - Static data
                     </a>
                 </li>
+                <li class="{{ request()->is('admin/about-us') || request()->is('admin/about-us/*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.work.index') }}">
+                        - Why work with us
+                    </a>
+                </li>
             </ul>
         </li>
         <li class="{{ request()->is('admin/services') || request()->is('admin/services/*') ? 'active' : '' }}">
