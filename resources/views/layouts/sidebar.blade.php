@@ -11,6 +11,20 @@
         </li>
         <li class="sub-menu">
             <a rel="noreferrer" href="javascript:void(0);">
+                <i class="fa fa-home"></i>
+                Home page
+                <i class="fa fa-angle-down"></i>
+            </a>
+            <ul style="display : {{ request()->is('admin/home') || request()->is('admin/home/*') ? 'block' : '' }}">
+                <li class="{{ request()->is('admin/home') || request()->is('admin/home/*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.slides.index') }}">
+                        - Slideshow
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="sub-menu">
+            <a rel="noreferrer" href="javascript:void(0);">
                 <i class="fa fa-info"></i>
                 About us
                 <i class="fa fa-angle-down"></i>
@@ -76,6 +90,12 @@
             <a href="{{ route('admin.messages.index') }}">
                 <i class="fa fa-envelope"></i>
                 Messages
+            </a>
+        </li>
+        <li class="{{ request()->is('admin/subscribers') ? 'active' : '' }}">
+            <a href="{{ route('admin.subscribers.index') }}">
+                <i class="fa fa-users"></i>
+                Subscribers
             </a>
         </li>
     </ul><!--End Ul-->

@@ -1,14 +1,13 @@
 <?php
 
-namespace Modules\Dashboard\Http\Controllers;
+namespace Modules\Subscribe\Http\Controllers\Dashboard;
 
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Modules\Message\Entities\Message;
 use Modules\Subscribe\Entities\Subscriber;
 
-class DashboardController extends Controller
+class SubscriberController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,10 +15,9 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $messages = Message::all()->sortByDesc('id')->take(10);
-        $subscribers = Subscriber::all()->sortByDesc('od')->take(10);
+        $subscribers = Subscriber::orderByDesc('id')->paginate(20);
 
-        return view('dashboard::index' , ['messages' => $messages , 'subscribers' => $subscribers]);
+        return view('subscribe::index' , ['subscribers' => $subscribers]);
     }
 
     /**
@@ -28,7 +26,7 @@ class DashboardController extends Controller
      */
     public function create()
     {
-        return view('dashboard::create');
+        return view('subscribe::create');
     }
 
     /**
@@ -48,7 +46,7 @@ class DashboardController extends Controller
      */
     public function show($id)
     {
-        return view('dashboard::show');
+        return view('subscribe::show');
     }
 
     /**
@@ -58,7 +56,7 @@ class DashboardController extends Controller
      */
     public function edit($id)
     {
-        return view('dashboard::edit');
+        return view('subscribe::edit');
     }
 
     /**
@@ -79,6 +77,8 @@ class DashboardController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Subscriber::find($id)->delete();
+
+        return redirect()->back();
     }
 }

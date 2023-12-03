@@ -9,5 +9,7 @@
     "Branch": true,
     "Blog": true,
     "Setting": true,
-    "About": true
+    "About": true,
+    "Slideshow": true,
+    "Subscribe": true
 }

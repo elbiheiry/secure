@@ -1,0 +1,13 @@
+{
+    "name": "Slideshow",
+    "alias": "slideshow",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Slideshow\\Providers\\SlideshowServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

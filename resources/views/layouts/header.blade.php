@@ -14,12 +14,6 @@
             <div class="dropdown-menu">
                 <ul>
                     <li>
-                        <a href="#">
-                            <i class="fa fa-cog"></i>
-                            setting
-                        </a>
-                    </li>
-                    <li>
                         <a href="javascript:;" onclick="$('#logout-form').submit()">
                             <i class="fa fa-power-off"></i>
                             logout
