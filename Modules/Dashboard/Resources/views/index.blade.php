@@ -22,7 +22,8 @@
                             <td>{{ $message->phone }}</td>
 
                             <td>
-                                <a href="{{ route('admin.message.show', ['id' => $message->id]) }}" class="icon-btn green-bc">
+                                <a href="{{ route('admin.messages.show', ['id' => $message->id]) }}"
+                                    class="icon-btn green-bc">
                                     <i class="fas fa-eye"></i>
                                 </a>
 

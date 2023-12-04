@@ -57,6 +57,7 @@ class BranchController extends Controller
 
             return add_response($url);
         } catch (\Throwable $th) {
+            dd($th->getMessage());
             return error_response();
         }
     }

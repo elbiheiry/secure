@@ -35,9 +35,12 @@ if (!function_exists('error_response')) {
 }
 
 if (!function_exists('success_response')) {
-    function success_response($message)
+    function success_response($message ,$url)
     {
-        return response()->json($message, 200);
+        return response()->json([
+            'message' => $message,
+            'url' => $url
+        ], 200);
     }
 }
 
@@ -45,6 +48,13 @@ if (!function_exists('aurl')) {
     function aurl($path)
     {
         return asset('admin-assets/' . $path);
+    }
+}
+
+if (!function_exists('surl')) {
+    function surl($path)
+    {
+        return asset('site-assets/' . $path);
     }
 }
 

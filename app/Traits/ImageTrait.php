@@ -12,24 +12,31 @@ trait ImageTrait
         $image->store($path ,'public');
         $name = $image->hashName();
 
-        if ($width && $height) {
-            Intervention::make(storage_path('app/public/' . $path . '/' . $name))
-                ->resize($width, $height)
-                ->save(storage_path('app/public/' . $path . '/' . $name));
-        }elseif ($width && $height == null) {
-            Intervention::make(storage_path('app/public/' . $path . '/' . $name))
-                ->resize($width, null , function ($constraint)
-                {
-                    $constraint->aspectRatio();
-                })
-                ->save(storage_path('app/public/' . $path . '/' . $name));
-        }elseif ($width == null && $height) {
-            Intervention::make(storage_path('app/public/' . $path . '/' . $name))
-                ->resize(null, $height , function ($constraint)
-                {
-                    $constraint->aspectRatio();
-                })
-                ->save(storage_path('app/public/' . $path . '/' . $name));
+        if(!$image->extension() == 'svg'){
+
+            if ($width && $height) {
+                Intervention::make(storage_path('app/public/' . $path . '/' . $name))
+                    ->resize($width, $height)
+                    ->save(storage_path('app/public/' . $path . '/' . $name));
+            }elseif ($width && $height == null) {
+                Intervention::make(storage_path('app/public/' . $path . '/' . $name))
+                    ->resize($width, null , function ($constraint)
+                    {
+                        $constraint->aspectRatio();
+                    })
+                    ->save(storage_path('app/public/' . $path . '/' . $name));
+            }elseif ($width == null && $height) {
+                Intervention::make(storage_path('app/public/' . $path . '/' . $name))
+                    ->resize(null, $height , function ($constraint)
+                    {
+                        $constraint->aspectRatio();
+                    })
+                    ->save(storage_path('app/public/' . $path . '/' . $name));
+            }
+        }else{
+            $name = time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = storage_path('app/public/'.$path);
+            $image->move($destinationPath, $name);
         }
         return $name;
     }
