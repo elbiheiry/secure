@@ -49,10 +49,10 @@
                                 href="{{ route('site.careers.index') }}">{{ locale() == 'en' ? 'Careers' : 'الوظائف' }}</a>
                         </li>
                         <li>
-                            <a href="Blogs.php">{{ locale() == 'en' ? 'Blog' : 'المدونة' }}</a>
+                            <a href="{{ route('site.blog') }}">{{ locale() == 'en' ? 'Blog' : 'المدونة' }}</a>
                         </li>
                         <li>
-                            <a href="Forum.php">{{ locale() == 'en' ? 'Forum' : 'المنتدري' }}</a>
+                            <a href="{{ route('site.forums') }}">{{ locale() == 'en' ? 'Forum' : 'المنتدي' }}</a>
                         </li>
                     </ul>
                 </div>

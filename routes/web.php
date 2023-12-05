@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CareerController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ForumController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SolutionController;
@@ -54,4 +56,17 @@ Route::prefix(LaravelLocalization::setLocale())
          * contact us page
          */
         Route::get('/contact-us' , [ContactController::class , 'index'])->name('contact.index');
+
+        /**
+         * blog page route
+         */
+        Route::get('/blog' , [BlogController::class , 'index'])->name('blog');
+        Route::get('/blog/{article}' , [BlogController::class , 'article'])->name('article');
+
+        /**
+         * forums page route
+         */
+        Route::get('/forums' , [ForumController::class , 'index'])->name('forums');
+        Route::get('/forums/{forum}' , [ForumController::class , 'forum'])->name('forum');
+        Route::post('/forums/add-comment' , [ForumController::class , 'addComment'])->name('addComment');
     });

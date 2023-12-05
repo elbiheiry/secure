@@ -74,6 +74,12 @@
                 Blog
             </a>
         </li>
+        <li class="{{ request()->is('admin/forums') || request()->is('admin/forums/*') ? 'active' : '' }}">
+            <a href="{{ route('admin.forums.index') }}">
+                <i class="fa fa-newspaper"></i>
+                Forums
+            </a>
+        </li>
         <li class="{{ request()->is('admin/branches') || request()->is('admin/branches/*') ? 'active' : '' }}">
             <a href="{{ route('admin.branches.index') }}">
                 <i class="fa fa-map-marker"></i>

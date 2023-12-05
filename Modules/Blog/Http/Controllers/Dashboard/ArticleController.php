@@ -112,8 +112,8 @@ class ArticleController extends Controller
             }
 
 
-            if ($request->name_en != $article->translate('en')->name) {
-                $data['slug'] = SlugService::createSlug(Article::class , 'slug' , $request->name_en , ['unique' => true]);
+            if ($request->title_en != $article->translate('en')->title) {
+                $data['slug'] = SlugService::createSlug(Article::class , 'slug' , $request->title_en , ['unique' => true]);
             }
 
             $article->update($data);

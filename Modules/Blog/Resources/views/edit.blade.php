@@ -15,20 +15,12 @@
             action="{{ route('admin.articles.update', ['article' => $article->slug]) }}">
             @csrf
             @method('PUT')
-            <div class="col-md-12 col-sm-12 form-group">
+            <div class="col-md-6 col-sm-6 form-group">
                 <img src="{{ $article->image_path }}" alt="logo" width="200">
             </div>
             <div class="col-md-6 col-sm-6 form-group">
                 <label>Image</label>
                 <input class="jfilestyle" type="file" name="image">
-            </div>
-            <div class="col-md-6 col-sm-6 form-group">
-                <label>Type</label>
-                <select class="form-control" name="type">
-                    <option value="0">Choose</option>
-                    <option value="forum" {{ $article->type == 'forum' ? 'selected' : '' }}>Forum</option>
-                    <option value="blog" {{ $article->type == 'blog' ? 'selected' : '' }}>Blog</option>
-                </select>
             </div>
             @foreach (config('translatable.locales') as $locale)
                 <div class="col-md-6 col-sm-6 form-group">

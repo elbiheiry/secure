@@ -16,7 +16,6 @@ class ArticleRequest extends FormRequest
     public function rules()
     {
         $data = [
-            'type' => ['required' , 'in:forum,blog']
         ];
 
         $data['image'] = $this->isMethod('post') ? ['required' , 'image' , 'mimes:jpeg,png,jpg,gif,svg' , 'max:2048'] : ['nullable' , 'image' , 'mimes:jpeg,png,jpg,gif,svg' , 'max:2048'];

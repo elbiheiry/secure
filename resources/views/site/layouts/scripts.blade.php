@@ -142,3 +142,5 @@
         return false;
     });
 </script>
+
+@stack('js')

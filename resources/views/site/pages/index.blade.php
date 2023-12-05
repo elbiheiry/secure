@@ -260,7 +260,7 @@
                 <!-- Item -->
                 @foreach ($articles as $article)
                     <div class="item col-12 col-md-6 col-lg-4">
-                        <a href="#">
+                        <a href="{{ route('site.article', ['article' => $article->slug]) }}">
                             <div class="content">
                                 <span></span>
                                 <h3>{{ $article->translate(locale())->title }}</h3>

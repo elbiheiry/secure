@@ -13,17 +13,9 @@
     <div class="page-content">
         <form class="row ajax-form" method="post" action="{{ route('admin.articles.store') }}">
             @csrf
-            <div class="col-md-6 col-sm-6 form-group">
+            <div class="col-md-12 col-sm-12 form-group">
                 <label>Image</label>
                 <input class="jfilestyle" type="file" name="image">
-            </div>
-            <div class="col-md-6 col-sm-6 form-group">
-                <label>Type</label>
-                <select class="form-control" name="type">
-                    <option value="0">Choose</option>
-                    <option value="forum">Forum</option>
-                    <option value="blog">Blog</option>
-                </select>
             </div>
             @foreach (config('translatable.locales') as $locale)
                 <div class="col-md-6 col-sm-6 form-group">

@@ -14,7 +14,7 @@ class Article extends Model implements TranslatableContract
     use HasFactory , Translatable , Sluggable , ImageTrait;
 
     protected $fillable = [
-        'id' , 'slug' ,'image' , 'type'
+        'id' , 'slug' ,'image'
     ];
 
     public $translatedAttributes = [
