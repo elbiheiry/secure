@@ -13,7 +13,7 @@
     <!-- Site Author -->
     <meta name="author" content="Secure Networks">
     <!-- Title -->
-    <title>Home | Secure Networks</title>
+    <title>Secure Networks</title>
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ surl('images/favicon.png') }}">
     <!-- Bootstrap 4 -->

@@ -10,7 +10,7 @@ class Subscriber extends Model
     use HasFactory;
 
     protected $fillable = [
-        'mail'
+        'email'
     ];
     
     protected static function newFactory()

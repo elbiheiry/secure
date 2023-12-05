@@ -23,11 +23,12 @@
                             href="{{ route('site.index') }}">{{ locale() == 'en' ? 'Home' : 'الرئيسية' }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="About-Us.php">{{ locale() == 'en' ? 'About us' : 'من نحن' }}</a>
+                        <a class="nav-link"
+                            href="{{ route('site.about') }}">{{ locale() == 'en' ? 'About us' : 'من نحن' }}</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="{{ route('site.services') }}" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             {{ locale() == 'en' ? 'Services' : 'الخدمات' }}
                         </a>
                         <div class="dropdown-menu">
@@ -35,7 +36,7 @@
                                 @foreach ($allServices as $service)
                                     <li>
                                         <a class="dropdown-item"
-                                            href="GOVERNANCE , RISK AND COMPLIANCE MANAGEMENT.php">{{ $service->translate(locale())->name }}
+                                            href="{{ route('site.service', ['service' => $service->slug]) }}">{{ $service->translate(locale())->name }}
                                         </a>
                                     </li>
                                 @endforeach
@@ -43,8 +44,8 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="{{ route('site.solutions') }}" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             {{ locale() == 'en' ? 'Solutions' : 'حلولنا' }}
                         </a>
                         <div class="dropdown-menu">
@@ -52,7 +53,7 @@
                                 @foreach ($allSolutions as $solution)
                                     <li>
                                         <a class="dropdown-item"
-                                            href="GOVERNANCE , RISK AND COMPLIANCE MANAGEMENT.php">{{ $solution->translate(locale())->name }}
+                                            href="{{ route('site.solution', ['solution' => $solution->slug]) }}">{{ $solution->translate(locale())->name }}
                                         </a>
                                     </li>
                                 @endforeach
@@ -61,14 +62,15 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link"
-                            href="Clients.php">{{ locale() == 'en' ? 'Business partners' : 'شركاء الأعمال' }}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Careers.php">{{ locale() == 'en' ? 'Careers' : 'الوظائف' }}</a>
+                            href="{{ route('site.partners') }}">{{ locale() == 'en' ? 'Business partners' : 'شركاء الأعمال' }}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link"
-                            href="Contact.php">{{ locale() == 'en' ? 'Contact us' : 'تواصل معنا`' }}</a>
+                            href="{{ route('site.careers.index') }}">{{ locale() == 'en' ? 'Careers' : 'الوظائف' }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"
+                            href="{{ route('site.contact.index') }}">{{ locale() == 'en' ? 'Contact us' : 'تواصل معنا`' }}</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"

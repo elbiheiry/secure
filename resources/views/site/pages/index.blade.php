@@ -53,7 +53,7 @@
                         data-paddingright="[35,35,35,35]" data-paddingbottom="[12,12,12,12]"
                         data-paddingleft="[35,35,35,35]"
                         style="z-index: 8; white-space: nowrap; font-size: 16px; line-height: 30px; font-weight: 700; color: #0a0505;font-family:Quicksand;background-color:rgb(208,187,121);border-color:rgb(208,187,121);border-radius:3px 3px 3px 3px;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">
-                        <a href="Contact.php">Contact us</a>
+                        <a href="{{ route('site.contact.index') }}">Contact us</a>
                     </div>
                 </li>
                 <!-- SLIDE  -->
@@ -102,7 +102,7 @@
                         data-paddingright="[35,35,35,35]" data-paddingbottom="[12,12,12,12]"
                         data-paddingleft="[35,35,35,35]"
                         style="z-index: 8; white-space: nowrap; font-size: 16px; line-height: 30px; font-weight: 700; color: #0a0505;font-family:Quicksand;background-color:rgb(208,187,121);border-color:rgb(208,187,121);border-radius:3px 3px 3px 3px;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">
-                        <a href="Contact.php">Contact us</a>
+                        <a href="{{ route('site.contact.index') }}">Contact us</a>
                     </div>
                 </li>
                 <!-- SLIDE  -->
@@ -126,7 +126,7 @@
                         data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
                         data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
                         style="z-index: 6; white-space: nowrap; font-size: 60px; line-height: 80px; font-weight: 400; color: #ffffff; letter-spacing: 0px;font-family:Quicksand;">
-                        <strong><a href="Contact.php">Contact us</a> </strong>
+                        <strong><a href="{{ route('site.contact.index') }}">Contact us</a> </strong>
                     </div>
                     <!-- LAYER NR. 11 -->
                     <div class="tp-caption  " id="slide-71-layer-5" data-x="['left','left','left','left']"
@@ -151,7 +151,7 @@
                         data-paddingright="[35,35,35,35]" data-paddingbottom="[12,12,12,12]"
                         data-paddingleft="[35,35,35,35]"
                         style="z-index: 8; white-space: nowrap; font-size: 16px; line-height: 30px; font-weight: 700; color: #0a0505;font-family:Quicksand;background-color:rgb(208,187,121);border-color:rgb(208,187,121);border-radius:3px 3px 3px 3px;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">
-                        <a href="Contact.php">Contact us</a>
+                        <a href="{{ route('site.contact.index') }}">Contact us</a>
                     </div>
                 </li>
             </ul>
@@ -179,7 +179,7 @@
 
                 <!-- /.Item -->
                 <div class="col-sm-12 text-center">
-                    <a href="#" class="btn-3">
+                    <a href="{{ route('site.services') }}" class="btn-3">
                         {{ locale() == 'en' ? 'See more' : 'عرض المزيد' }}
                         <i class="fa fa-chevron-{{ locale() == 'en' ? 'right' : 'left' }}"></i>
                     </a>
@@ -219,7 +219,7 @@
                     </div>
                 @endforeach
                 <div class="col-sm-12 text-center mt-5">
-                    <a href="#" class="btn-3">
+                    <a href="{{ route('site.solutions') }}" class="btn-3">
                         {{ locale() == 'en' ? 'See more' : 'عرض المزيد' }}
                         <i class="fa fa-chevron-{{ locale() == 'en' ? 'right' : 'left' }}"></i>
                     </a>
@@ -238,7 +238,8 @@
                     <p>{{ locale() == 'en' ? 'Get in touch with us right now to get a meeting.' : 'تواصل معنا الان ' }}</p>
                 </div>
                 <div class="right col-sm-12 col-md-4">
-                    <a href="#" class="btn-6">{{ locale() == 'en' ? 'Contact Us' : 'تواصل معنا' }}</a>
+                    <a href="{{ route('site.contact.index') }}"
+                        class="btn-6">{{ locale() == 'en' ? 'Contact Us' : 'تواصل معنا' }}</a>
                 </div>
             </div>
         </div>
@@ -305,33 +306,37 @@
                 <!-- Contact Form -->
                 <div class="contact-form col-sm-12">
                     <!-- Form -->
-                    <form class="ajax-form" action="{{ route('site.store') }}" method="post">
+                    <form class="contact-form" action="{{ route('site.store') }}" method="post">
                         @csrf
                         @method('POST')
                         <div class="row">
                             <div class="form-group col-sm-12 col-md-12 col-lg-6">
-                                <input type="text" class="form-control" name="name" placeholder="Name">
+                                <input type="text" class="form-control" name="name"
+                                    placeholder="{{ locale() == 'en' ? 'Name' : 'الإسم بالكامل' }}">
                             </div>
                             <div class="form-group col-sm-12 col-md-12 col-lg-6">
-                                <input type="email" class="form-control" name="email" placeholder="Email">
+                                <input type="email" class="form-control" name="email"
+                                    placeholder="{{ locale() == 'en' ? 'Email' : 'البريد الإلكتروني' }}">
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-sm-12 col-md-12 col-lg-6">
-                                <input type="text" class="form-control" name="phone" placeholder="Phone Number">
+                                <input type="text" class="form-control" name="phone"
+                                    placeholder="{{ locale() == 'en' ? 'Phone number' : 'رقم الهاتف' }}">
                             </div>
                             <div class="form-group col-sm-12 col-md-12 col-lg-6">
-                                <input type="text" class="form-control" name="subject" placeholder="Subject">
+                                <input type="text" class="form-control" name="subject"
+                                    placeholder="{{ locale() == 'en' ? 'Subject' : 'عنوان الرساله' }}">
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-12">
-                                <textarea class="form-control" name="message" placeholder="Message"></textarea>
+                                <textarea class="form-control" name="message" placeholder="{{ locale() == 'en' ? 'Message' : 'الرسالة' }}"></textarea>
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-12">
-                                <button type="submit">Submit</button>
+                                <button type="submit">{{ locale() == 'en' ? 'Submit' : 'تأكيد' }}</button>
                             </div>
                         </div>
                     </form>

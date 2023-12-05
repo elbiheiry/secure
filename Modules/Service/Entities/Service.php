@@ -14,7 +14,7 @@ class Service extends Model implements TranslatableContract
     use HasFactory , Translatable , Sluggable , ImageTrait;
 
     protected $fillable = [
-        'id' , 'slug' ,'image' , 'icon'
+        'id' , 'slug' ,'image' ,'outer_image' , 'icon'
     ];
 
     public $translatedAttributes = [
@@ -33,6 +33,11 @@ class Service extends Model implements TranslatableContract
     public function getImagePathAttribute()
     {
         return $this->get_image($this->image , 'services');
+    }
+
+    public function getOuterImagePathAttribute()
+    {
+        return $this->get_image($this->outer_image , 'services');
     }
 
     public function getRouteKeyName()

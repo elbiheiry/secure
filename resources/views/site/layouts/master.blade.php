@@ -20,10 +20,22 @@
     <!-- Section Navbar -->
     @include('site.layouts.header')
     <!-- /.Section Navbar -->
-    @yield('content')
-    <!-- /.Section Contact -->
-    <!-- Section Footer -->
-    @include('site.layouts.footer')
+    @if (request()->routeIs('site.index'))
+        @yield('content')
+        <!-- /.Section Contact -->
+        <!-- Section Footer -->
+        @include('site.layouts.footer')
+    @else
+        <div class="main-wrapper">
+            <div id="main-content" class="active">
+                @yield('content')
+                <!-- /.Section Contact -->
+                <!-- Section Footer -->
+                @include('site.layouts.footer')
+            </div>
+        </div>
+    @endif
+
     <!-- /.Section Footer -->
     @include('site.layouts.scripts')
 </body>

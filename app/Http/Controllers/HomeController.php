@@ -6,10 +6,12 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Modules\Blog\Entities\Article;
 use Modules\Branch\Entities\Branch;
+use Modules\Client\Entities\Client;
 use Modules\Message\Entities\Message;
 use Modules\Service\Entities\Service;
 use Modules\Slideshow\Entities\Slideshow;
 use Modules\Solution\Entities\Solution;
+use Modules\Subscribe\Entities\Subscriber;
 
 class HomeController extends Controller
 {
@@ -58,5 +60,34 @@ class HomeController extends Controller
         } catch (\Throwable $th) {
             return error_response();
         }
+    }
+
+    public function subscribe(Request $request)
+    {
+        $validation = Validator::make($request->all() , [
+            'email' => ['required' , 'email' , 'unique:subscribers,email' , 'max:255']
+        ] ,[] ,[
+            'email' => locale() == 'en' ? 'Email' : 'البريد الإلكتروني'
+        ]);
+
+        if ($validation->fails()) {
+            return failed_validation($validation->errors()->first());
+        }
+
+        try {
+            Subscriber::create($request->all());
+
+            $url = url()->previous();
+            return success_response(locale() == 'en' ? 'Thank you for subscribing with us' : 'شكرا لك علي إشتراكك في خدمتنا الإخبارية' , $url);
+        } catch (\Throwable $th) {
+            return error_response();
+        }
+    }
+
+    public function partners()
+    {
+        $clients = Client::all()->sortByDesc('id');
+
+        return view('site.pages.partners' , ['clients' => $clients]);
     }
 }

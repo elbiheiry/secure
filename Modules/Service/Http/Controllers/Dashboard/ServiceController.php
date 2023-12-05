@@ -44,6 +44,7 @@ class ServiceController extends Controller
         try {
             $data = [
                 'image' => $this->image_manipulate($request->image , 'services' , 770 , 365),
+                'outer_image' => $this->image_manipulate($request->outer_image , 'services' , 450 , 675),
                 'icon' => $request->icon,
                 'slug' => SlugService::createSlug(Service::class , 'slug' , $request->name_en , ['unique' => true])
             ];
@@ -110,6 +111,10 @@ class ServiceController extends Controller
                 $data['image'] = $this->image_manipulate($request->image , 'services' , 770 , 365);
             }
 
+            if ($request->outer_image) {
+                $this->image_delete($service->outer_image , 'services');
+                $data['outer_image'] = $this->image_manipulate($request->outer_image , 'services' , 450 , 675);
+            }
 
             if ($request->name_en != $service->translate('en')->name) {
                 $data['slug'] = SlugService::createSlug(Service::class , 'slug' , $request->name_en , ['unique' => true]);

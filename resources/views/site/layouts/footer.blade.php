@@ -5,8 +5,15 @@
                 <div class="col-md-6 col-lg-3 mb-4">
                     <div class="main-footer-1">
                         <img src="{{ surl('images/header-logo.png') }}" alt="" class="brand-logo" width="100">
-                        <p class="mt-4 pr-4">Secure Networks are one of the fastest growing security firms
-                            with customers spanning the globe.</p>
+                        <p class="mt-4 pr-4">
+                            @if (locale() == 'en')
+                                Secure Networks are one of the fastest growing security firms
+                                with customers spanning the globe.
+                            @else
+                                تعد شركة Secure Networks واحدة من أسرع شركات الأمن نموًا
+                                مع العملاء في جميع أنحاء العالم.
+                            @endif
+                        </p>
                         <div class="ft-socialmedia">
                             <div class="social-links socials-header">
                                 @foreach ($links as $link)
@@ -18,25 +25,28 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 mb-4">
-                    <h4 class="footer-title">Useful links</h4>
+                    <h4 class="footer-title">{{ locale() == 'en' ? 'Useful links' : 'روابط مهمة' }}</h4>
                     <ul class="footer-list">
                         <li>
-                            <a href="index.php">{{ locale() == 'en' ? 'Home' : 'الرئيسية' }}</a>
+                            <a href="{{ route('site.index') }}">{{ locale() == 'en' ? 'Home' : 'الرئيسية' }}</a>
                         </li>
                         <li>
-                            <a href="About-Us.php">{{ locale() == 'en' ? 'About us' : 'من نحن' }}</a>
+                            <a href="{{ route('site.about') }}">{{ locale() == 'en' ? 'About us' : 'من نحن' }}</a>
                         </li>
                         <li>
-                            <a href="Services.php">{{ locale() == 'en' ? 'Services' : 'الخدمات' }}</a>
+                            <a href="{{ route('site.services') }}">{{ locale() == 'en' ? 'Services' : 'الخدمات' }}</a>
                         </li>
                         <li>
-                            <a href="Solutions.php">{{ locale() == 'en' ? 'Solutions' : 'حلولنا' }}</a>
+                            <a
+                                href="{{ route('site.solutions') }}">{{ locale() == 'en' ? 'Solutions' : 'حلولنا' }}</a>
                         </li>
                         <li>
-                            <a href="Clients.php">{{ locale() == 'en' ? 'Business partners' : 'شركاء الأعمال' }}</a>
+                            <a
+                                href="{{ route('site.partners') }}">{{ locale() == 'en' ? 'Business partners' : 'شركاء الأعمال' }}</a>
                         </li>
                         <li>
-                            <a href="Careers.php">{{ locale() == 'en' ? 'Careers' : 'الوظائف' }}</a>
+                            <a
+                                href="{{ route('site.careers.index') }}">{{ locale() == 'en' ? 'Careers' : 'الوظائف' }}</a>
                         </li>
                         <li>
                             <a href="Blogs.php">{{ locale() == 'en' ? 'Blog' : 'المدونة' }}</a>
@@ -52,7 +62,7 @@
                         @foreach ($allServices as $service)
                             <li>
                                 <a
-                                    href="GOVERNANCE , RISK AND COMPLIANCE MANAGEMENT.php">{{ $service->translate(locale())->name }}</a>
+                                    href="{{ route('site.service', ['service' => $service->slug]) }}">{{ $service->translate(locale())->name }}</a>
                             </li>
                         @endforeach
                     </ul>
@@ -62,7 +72,7 @@
                     <ul class="footer-list">
                         @foreach ($allSolutions as $solution)
                             <li>
-                                <a href="GOVERNANCE , RISK AND COMPLIANCE MANAGEMENT.php">{{ $solution->translate(locale())->name }}
+                                <a href="{{ route('site.solution', ['solution' => $solution->slug]) }}">{{ $solution->translate(locale())->name }}
                                 </a>
                             </li>
                         @endforeach

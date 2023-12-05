@@ -17,6 +17,7 @@ class ServiceRequest extends FormRequest
     {
         $data = [
             'image' => $this->isMethod('post') ? ['required' , 'image' , 'mimes:jpeg,png,jpg,gif,svg' , 'max:2048'] : ['nullable' , 'image' , 'mimes:jpeg,png,jpg,gif,svg' , 'max:2048'],
+            'outer_image' => $this->isMethod('post') ? ['required' , 'image' , 'mimes:jpeg,png,jpg,gif,svg' , 'max:2048'] : ['nullable' , 'image' , 'mimes:jpeg,png,jpg,gif,svg' , 'max:2048'],
             'icon' => ['required' , 'string' ,'max:225']
         ];
 
@@ -32,6 +33,7 @@ class ServiceRequest extends FormRequest
     {
         $data = [
             'image' => 'Image',
+            'outer_image' => 'Outer image',
             'icon' => 'Icon'
         ];
 

@@ -51,6 +51,15 @@ class Career extends Model implements TranslatableContract
         return $this->hasMany(Candidate::class);
     }
 
+    public function getWorkTypeAttribute()
+    {
+        if ($this->type == 'fulltime') {
+            return locale() == 'en' ? 'Full time' : 'دوام كامل';
+        }else{
+            return locale() == 'en' ? 'Part time' : 'دوام جزئي';
+        }
+    }
+
     // protected static function newFactory()
     // {
     //     return \Modules\Career\Database\factories\CareerFactory::new();

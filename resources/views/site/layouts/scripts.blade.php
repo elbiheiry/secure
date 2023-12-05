@@ -41,3 +41,104 @@
 <script src="{{ surl('revslider2/js/inline-revslider2.js') }}"></script>
 <script src="{{ aurl('vendor/bootstrap-notify/bootstrap-notify.min.js') }}"></script>
 <script src="{{ aurl('js/admin.js') }}"></script>
+<script>
+    //submit form using ajax
+    $(document).on('submit', '.contact-form', function() {
+        var form = $(this);
+        var url = form.attr('action');
+        var formData = new FormData(form[0]);
+        form.find(":submit").attr('disabled', true).html(
+            "{{ locale() == 'en' ? 'Please wait' : 'برجاء الإنتظار' }}");
+
+        $.ajax({
+            xhr: function() {
+                var xhr = new window.XMLHttpRequest();
+
+                xhr.upload.addEventListener("progress", function(evt) {
+                    if (evt.lengthComputable) {
+                        var percentComplete = evt.loaded / evt.total;
+                        $('.progress-bar').width(percentComplete + '%');
+                        $('.progress-bar').html(percentComplete + '%');
+
+                    }
+                }, false);
+
+                return xhr;
+            },
+            url: url,
+            method: 'POST',
+            dataType: 'json',
+            data: formData,
+            contentType: false,
+            cache: false,
+            processData: false,
+            success: function(response) {
+                notification("success", response.message, "fas fa-check");
+                setTimeout(function() {
+                    window.location.href = response.url;
+                }, 2000);
+            },
+            error: function(jqXHR) {
+                var response = $.parseJSON(jqXHR.responseText);
+                notification("danger", response, "fas fa-times");
+                form.find(":submit").attr('disabled', false).html(
+                    "{{ locale() == 'en' ? 'Submit' : 'تأكيد' }}");
+            }
+        });
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-Token': $('input[name="_token"]').val()
+            }
+        });
+        return false;
+    });
+    $(document).on('submit', '.subscribe-form', function() {
+        var form = $(this);
+        var url = form.attr('action');
+        var formData = new FormData(form[0]);
+        form.find(":submit").attr('disabled', true).html(
+            "{{ locale() == 'en' ? 'Please wait' : 'برجاء الإنتظار' }}");
+
+        $.ajax({
+            xhr: function() {
+                var xhr = new window.XMLHttpRequest();
+
+                xhr.upload.addEventListener("progress", function(evt) {
+                    if (evt.lengthComputable) {
+                        var percentComplete = evt.loaded / evt.total;
+                        $('.progress-bar').width(percentComplete + '%');
+                        $('.progress-bar').html(percentComplete + '%');
+
+                    }
+                }, false);
+
+                return xhr;
+            },
+            url: url,
+            method: 'POST',
+            dataType: 'json',
+            data: formData,
+            contentType: false,
+            cache: false,
+            processData: false,
+            success: function(response) {
+                notification("success", response.message, "fas fa-check");
+                setTimeout(function() {
+                    window.location.href = response.url;
+                }, 2000);
+            },
+            error: function(jqXHR) {
+                var response = $.parseJSON(jqXHR.responseText);
+                notification("danger", response, "fas fa-times");
+                form.find(":submit").attr('disabled', false).html(
+                    "{{ locale() == 'en' ? 'Subscribe' : 'إشترك الان' }}");
+            }
+        });
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-Token': $('input[name="_token"]').val()
+            }
+        });
+        return false;
+    });
+</script>
