@@ -47,6 +47,7 @@ class ForumController extends Controller
                 $data[$locale] = [
                     'title' => $request['title_' . $locale],
                     'description' => $request['description_' . $locale],
+                    'category' => $request['category_'.$locale]
                 ];
             }
 
@@ -95,6 +96,7 @@ class ForumController extends Controller
                 $data[$locale] = [
                     'title' => $request['title_' . $locale],
                     'description' => $request['description_' . $locale],
+                    'category' => $request['category_'.$locale]
                 ];
             }
             if ($request->title_en != $forum->translate('en')->title) {

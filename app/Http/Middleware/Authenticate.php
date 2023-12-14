@@ -46,7 +46,9 @@ class Authenticate extends Middleware
                 'message' => 'الرجاء تسجيل الدخول أولاً',
             ], 401));
         } else {
-            if (Arr::first($this->guards) === 'web') {
+            if (Arr::first($this->guards) === 'members') {
+                return route('site.login');
+            }else if (Arr::first($this->guards) === 'web') {
                 return route('admin.login');
             }
         }

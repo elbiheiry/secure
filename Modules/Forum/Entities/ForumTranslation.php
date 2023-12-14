@@ -10,7 +10,7 @@ class ForumTranslation extends Model
     use HasFactory;
 
     protected $fillable = [
-        'title' , 'description' , 'locale' , 'forum_id'
+        'title' , 'description' , 'category' , 'locale' , 'forum_id'
     ];
     
     // protected static function newFactory()

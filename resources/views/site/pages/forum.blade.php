@@ -25,9 +25,10 @@
                     <a href="#">
                         <h2>{{ $forum->translate(locale())->title }}</h2>
                     </a>
-                    <div class="date">{{ $forum->created_at->format('M d, Y') }}
+                    <div class="date">
+                        {{ $forum->created_at->format('M d, Y') }}
                         <span>{{ locale() == 'en' ? 'IN' : 'في ' }}</span>
-                        <strong>{{ $forum->translate(locale())->department }}</strong>
+                        <strong>{{ $forum->translate(locale())->category }}</strong>
                     </div>
                     {!! $forum->translate(locale())->description !!}
                     <!-- Share -->

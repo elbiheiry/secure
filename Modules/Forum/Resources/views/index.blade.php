@@ -20,6 +20,7 @@
                     <tr>
                         <th>#</th>
                         <th>Title</th>
+                        <th>Created By</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -28,6 +29,7 @@
                         <tr>
                             <td>{{ $index + 1 }}</td>
                             <td>{{ $forum->translate('en')->title }}</td>
+                            <td>{{ $forum->member_id != null ? $forum->member->name : 'Admin' }}</td>
                             <td>
                                 <a href="{{ route('admin.forums.comments', ['forum' => $forum->slug]) }}"
                                     class="icon-btn blue-bc">
