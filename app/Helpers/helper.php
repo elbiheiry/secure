@@ -65,6 +65,13 @@ if (!function_exists('sanctum')) {
     }
 }
 
+if (!function_exists('member')) {
+    function member()
+    {
+        return auth()->guard('members');
+    }
+}
+
 if (!function_exists('api_response_success')) {
     function api_response_success($data)
     {

@@ -107,14 +107,6 @@
                             @csrf
                             <div class="row">
                                 <input type="hidden" name="forum_id" value="{{ $forum->id }}">
-                                <div class="form-group col-sm-12 col-md-6">
-                                    <input type="text" class="form-control" name="name"
-                                        placeholder="{{ locale() == 'en' ? 'Name' : 'الإسم' }}">
-                                </div>
-                                <div class="form-group col-sm-12 col-md-6">
-                                    <input type="email" class="form-control" name="email"
-                                        placeholder="youremail@email.com">
-                                </div>
                             </div>
 
                             <div class="row">

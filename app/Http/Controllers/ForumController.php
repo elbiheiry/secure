@@ -41,22 +41,23 @@ class ForumController extends Controller
 
         try {
             $forum = Forum::find($request->forum_id);
+            $member = member()->user();
 
             if ($request->has('forum_comment_id')) {
                 $comment = ForumComment::find($request->forum_comment_id);
 
                 ForumComment::create([
                     'forum_id' => $comment->forum_id,
-                    'name' => $comment->name,
-                    'email' => $comment->email,
+                    'name' => $member->name,
+                    'email' => $member->email,
                     'comment' => $request->comment,
                     'forum_comment_id' => $request->forum_comment_id
                 ]);
             }else{
                 ForumComment::create([
                     'forum_id' => $request->forum_id,
-                    'name' => $request->name,
-                    'email' => $request->email,
+                    'name' => $member->name,
+                    'email' => $member->email,
                     'comment' => $request->comment
                 ]);
             }

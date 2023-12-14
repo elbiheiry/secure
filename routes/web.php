@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CareerController;
 use App\Http\Controllers\ContactController;
@@ -63,10 +64,18 @@ Route::prefix(LaravelLocalization::setLocale())
         Route::get('/blog' , [BlogController::class , 'index'])->name('blog');
         Route::get('/blog/{article}' , [BlogController::class , 'article'])->name('article');
 
+
+        // Authentication Routes...
+        Route::get('login', [AuthController::class , 'showLoginForm'])->name('login');
+        Route::post('login', [AuthController::class , 'login']);
+        Route::post('logout', [AuthController::class , 'logout'])->name('logout');
+        
         /**
          * forums page route
          */
-        Route::get('/forums' , [ForumController::class , 'index'])->name('forums');
-        Route::get('/forums/{forum}' , [ForumController::class , 'forum'])->name('forum');
-        Route::post('/forums/add-comment' , [ForumController::class , 'addComment'])->name('addComment');
+        Route::middleware('auth:members')->group(function (){
+            Route::get('/forums' , [ForumController::class , 'index'])->name('forums');
+            Route::get('/forums/{forum}' , [ForumController::class , 'forum'])->name('forum');
+            Route::post('/forums/add-comment' , [ForumController::class , 'addComment'])->name('addComment');
+        });
     });

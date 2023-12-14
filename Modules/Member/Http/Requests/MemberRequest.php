@@ -16,9 +16,10 @@ class MemberRequest extends FormRequest
      */
     public function rules()
     {
+        $member = $this->isMethod('put') ? $this->member : null;
         return [
             'name' => ['required' , 'string' , 'max:255'],
-            'email' => ['required' , 'unique:members,email'],
+            'email' => ['required' , 'unique:members,email,'.$member->id],
             'password' => $this->isMethod('post') ? ['required' , Password::min(8)->mixedCase()->uncompromised()->numbers()->symbols()] : ($this->password ? Password::min(8)->mixedCase()->uncompromised()->numbers()->symbols() : '')
         ];
     }

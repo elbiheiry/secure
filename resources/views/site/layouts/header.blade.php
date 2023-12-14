@@ -72,6 +72,12 @@
                         <a class="nav-link"
                             href="{{ route('site.contact.index') }}">{{ locale() == 'en' ? 'Contact us' : 'تواصل معنا`' }}</a>
                     </li>
+                    @if (member()->guest())
+                        <li class="nav-item">
+                            <a class="nav-link"
+                                href="{{ route('site.login') }}">{{ locale() == 'en' ? 'Login' : 'تسجيل الدخول' }}</a>
+                        </li>
+                    @endif
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">

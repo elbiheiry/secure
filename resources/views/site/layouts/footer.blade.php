@@ -51,9 +51,12 @@
                         <li>
                             <a href="{{ route('site.blog') }}">{{ locale() == 'en' ? 'Blog' : 'المدونة' }}</a>
                         </li>
-                        <li>
-                            <a href="{{ route('site.forums') }}">{{ locale() == 'en' ? 'Forum' : 'المنتدي' }}</a>
-                        </li>
+                        @if (member()->check())
+                            <li>
+                                <a href="{{ route('site.forums') }}">{{ locale() == 'en' ? 'Forum' : 'المنتدي' }}</a>
+                            </li>
+                        @endif
+
                     </ul>
                 </div>
                 <div class="col-md-6 col-lg-3 mb-4">
