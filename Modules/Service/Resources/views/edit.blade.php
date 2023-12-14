@@ -16,23 +16,38 @@
             @csrf
             @method('PUT')
             <div class="col-md-6 col-sm-6 form-group">
-                <img src="{{ $service->outer_image_path }}" alt="logo" style="height : 100px; !importnant">
+                @if ($service->outer_image)
+                    <img src="{{ $service->outer_image_path }}" alt="logo" style="height : 100px; !importnant">
+                @else
+                    {{-- <img src="{{ $service->outer_image_path }}" alt="logo" style="height : 100px; !importnant"> --}}
+                @endif
+
             </div>
             <div class="col-md-6 col-sm-6 form-group">
                 <img src="{{ $service->image_path }}" alt="logo" width="250">
             </div>
 
-            <div class="col-md-4 col-sm-4 form-group">
+            <div class="col-md-6 col-sm-6 form-group">
                 <label>Outer image</label>
                 <input class="jfilestyle" type="file" name="outer_image">
             </div>
-            <div class="col-md-4 col-sm-4 form-group">
+            <div class="col-md-6 col-sm-6 form-group">
                 <label>Image</label>
                 <input class="jfilestyle" type="file" name="image">
             </div>
-            <div class="col-md-4 col-sm-4 form-group">
+            <div class="col-md-6 col-sm-6 form-group">
                 <label>Icon</label>
                 <input class="form-control" type="text" name="icon" value="{{ $service->icon }}">
+            </div>
+            <div class="col-md-6 col-sm-6 form-group">
+                <label>Service Sub to :</label>
+                <select class="form-control" name="parent_id">
+                    <option value="0" {{ $service->parent_id == 0 ? 'selected' : '' }}>Main category</option>
+                    @foreach ($services as $item)
+                        <option value="{{ $item->id }}" {{ $service->parent_id == $item->id ? 'selected' : '' }}>
+                            {{ $item->translate('en')->name }}</option>
+                    @endforeach
+                </select>
             </div>
             @foreach (config('translatable.locales') as $locale)
                 <div class="col-md-6 col-sm-6 form-group">

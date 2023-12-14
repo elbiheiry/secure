@@ -20,7 +20,7 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $services = Service::select('id' , 'image' , 'slug' , 'icon')->orderByDesc('id')->get();
+        $services = Service::select('id' , 'image' , 'parent_id' , 'slug' )->orderByDesc('id')->get();
 
         return view('service::index' , compact('services'));
     }
@@ -31,7 +31,11 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        return view('service::create');
+        $services = Service::select('id' , 'parent_id')->where('parent_id' , 0)->orderByDesc('id')->get();
+
+        return view('service::create' , [
+            'services' => $services
+        ]);
     }
 
     /**
@@ -43,8 +47,9 @@ class ServiceController extends Controller
     {
         try {
             $data = [
+                'parent_id' => $request->parent_id,
                 'image' => $this->image_manipulate($request->image , 'services' , 770 , 365),
-                'outer_image' => $this->image_manipulate($request->outer_image , 'services' , 450 , 675),
+                'outer_image' => $request->parent_id == 0 ? $this->image_manipulate($request->outer_image , 'services' , 450 , 675) : null,
                 'icon' => $request->icon,
                 'slug' => SlugService::createSlug(Service::class , 'slug' , $request->name_en , ['unique' => true])
             ];
@@ -83,7 +88,9 @@ class ServiceController extends Controller
      */
     public function edit(Service $service)
     {
-        return view('service::edit' , compact('service'));
+        $services = Service::select('id' , 'parent_id')->where('parent_id' , 0)->orderByDesc('id')->get();
+
+        return view('service::edit' , compact('service' , 'services'));
     }
 
         /**
@@ -96,7 +103,8 @@ class ServiceController extends Controller
     {
         try {
             $data = [
-                'icon' => $request->icon
+                'icon' => $request->icon,
+                'parent_id' => $request->parent_id
             ];
 
             foreach (config('translatable.locales') as $locale) {
@@ -111,7 +119,7 @@ class ServiceController extends Controller
                 $data['image'] = $this->image_manipulate($request->image , 'services' , 770 , 365);
             }
 
-            if ($request->outer_image) {
+            if ($request->outer_image && $request->parent_id == 0) {
                 $this->image_delete($service->outer_image , 'services');
                 $data['outer_image'] = $this->image_manipulate($request->outer_image , 'services' , 450 , 675);
             }

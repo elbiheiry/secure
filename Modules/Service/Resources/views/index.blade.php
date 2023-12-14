@@ -21,6 +21,7 @@
                         <th>#</th>
                         <th>Image</th>
                         <th>Name</th>
+                        <th>Type</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -32,6 +33,8 @@
                                 <img src="{{ $service->image_path }}" alt="logo" class="table-img">
                             </td>
                             <td>{{ $service->translate('en')->name }}</td>
+                            <td>{{ $service->parent_id == 0 ? 'Main service' : 'Sub to ' . $service->parent->translate('en')->name }}
+                            </td>
                             <td>
                                 <a href="{{ route('admin.services.edit', ['service' => $service->slug]) }}"
                                     class="icon-btn green-bc">

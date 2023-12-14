@@ -26,13 +26,25 @@
 
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="InformationSecurityStrategy" role="tabpanel"
-                            aria-labelledby="InformationSecurityStrategy-tab">
+                            aria-labelledby="{{ $service->slug }}-tab">
 
                             <!-- Posts Contents -->
                             <img class="img-fluid main-image" src="{{ $service->image_path }}" alt="">
                             {!! $service->translate(locale())->description !!}
                             <!-- /.Post Contents -->
                         </div>
+
+                        @foreach ($relates as $relate)
+                            <div class="tab-pane fade" id="{{ $relate->slug }}" role="tabpanel"
+                                aria-labelledby="{{ $relate->slug }}-tab">
+
+                                <!-- Posts Contents -->
+                                <img class="img-fluid main-image" src="{{ $relate->image_path }}" alt="">
+
+                                {!! $relate->translate(locale())->description !!}
+                            </div>
+                        @endforeach
+
 
                     </div>
                     @if (count($relates) > 0)
@@ -70,14 +82,20 @@
                     <div class="category">
                         <!-- List -->
                         <ul class="nav nav-tabs border-0" id="myTab" role="tablist">
-                            @foreach ($allServices as $service)
+
+                            <li>
+                                <a class="active" id="{{ $service->slug }}-tab" data-toggle="tab"
+                                    data-target="#{{ $service->slug }}" type="button" role="tab"
+                                    aria-controls="{{ $service->slug }}" aria-selected="true">
+                                    {{ $service->translate(locale())->name }}
+                                </a>
+                            </li>
+                            @foreach ($relates as $relate)
                                 <li>
-                                    <a class="{{ $service->slug == request()->service ? 'active' : '' }}"
-                                        id="InformationSecurityStrategy-tab" data-toggle="tab"
-                                        data-target="#InformationSecurityStrategy" type="button" role="tab"
-                                        aria-controls="InformationSecurityStrategy"
-                                        aria-selected="{{ $service->slug == request()->service ? 'true' : 'false' }}">
-                                        {{ $service->translate(locale())->name }}
+                                    <a id="{{ $relate->slug }}-tab" data-toggle="tab" data-target="#{{ $relate->slug }}"
+                                        type="button" role="tab" aria-controls="{{ $relate->slug }}"
+                                        aria-selected="false">
+                                        {{ $relate->translate(locale())->name }}
                                     </a>
                                 </li>
                             @endforeach

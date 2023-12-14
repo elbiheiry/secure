@@ -14,7 +14,7 @@ class ServiceController extends Controller
 
     public function service(Service $service)
     {
-        $relates = Service::where('id' , '!=' , $service->id)->inRandomOrder()->take(3)->get();
+        $relates = Service::where('parent_id' , $service->id)->get();
 
         return view('site.pages.service' , ['service' => $service , 'relates' => $relates]);
     }

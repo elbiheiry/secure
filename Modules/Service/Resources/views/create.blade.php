@@ -13,17 +13,26 @@
     <div class="page-content">
         <form class="row ajax-form" method="post" action="{{ route('admin.services.store') }}">
             @csrf
-            <div class="col-md-4 col-sm-4 form-group">
+            <div class="col-md-6 col-sm-6 form-group">
                 <label>Outer image</label>
                 <input class="jfilestyle" type="file" name="outer_image">
             </div>
-            <div class="col-md-4 col-sm-4 form-group">
+            <div class="col-md-6 col-sm-6 form-group">
                 <label>Image</label>
                 <input class="jfilestyle" type="file" name="image">
             </div>
-            <div class="col-md-4 col-sm-4 form-group">
+            <div class="col-md-6 col-sm-6 form-group">
                 <label>Icon</label>
                 <input class="form-control" type="text" name="icon">
+            </div>
+            <div class="col-md-6 col-sm-6 form-group">
+                <label>Service Sub to :</label>
+                <select class="form-control" name="parent_id">
+                    <option value="0">Main category</option>
+                    @foreach ($services as $service)
+                        <option value="{{ $service->id }}">{{ $service->translate('en')->name }}</option>
+                    @endforeach
+                </select>
             </div>
             @foreach (config('translatable.locales') as $locale)
                 <div class="col-md-6 col-sm-6 form-group">
