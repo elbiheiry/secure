@@ -80,6 +80,12 @@
                 Forums
             </a>
         </li>
+        <li class="{{ request()->is('admin/members') || request()->is('admin/members/*') ? 'active' : '' }}">
+            <a href="{{ route('admin.members.index') }}">
+                <i class="fa fa-users"></i>
+                Members
+            </a>
+        </li>
         <li class="{{ request()->is('admin/branches') || request()->is('admin/branches/*') ? 'active' : '' }}">
             <a href="{{ route('admin.branches.index') }}">
                 <i class="fa fa-map-marker"></i>
