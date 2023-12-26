@@ -25,7 +25,7 @@
                         <strong>{{ $first_section->translate(locale())->title }}</strong>
                     </h1>
                     {!! $first_section->translate(locale())->description !!}
-                    <a href="#" class="btn-1">{{ locale() == 'en' ? 'Contact us' : 'تواصل معنا`' }}</a>
+                    <a href="{{ route('site.contact.index') }}" class="btn-1">{{ locale() == 'en' ? 'Contact us' : 'تواصل معنا`' }}</a>
                 </div>
                 <div class="right col-sm-12 col-md-6 mb-5 mb-md-0">
                     <img class="img-fluid" src="{{ $first_section->image_path }}" alt="">

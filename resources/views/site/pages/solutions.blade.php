@@ -8,7 +8,7 @@
                     <h1>{{ locale() == 'en' ? 'Solutions' : 'حلولنا' }}</h1>
                     <ul>
                         <li><a href="{{ route('site.index') }}">{{ locale() == 'en' ? 'Home' : 'الرئيسية' }}</a></li>
-                        <li class="current">{{ locale() == 'en' ? 'Solutions' : 'حلولنا' }}</li>
+                        <li class="current"><a href="#">{{ locale() == 'en' ? 'Solutions' : 'حلولنا' }}</a></li>
                     </ul>
                 </div>
             </div>

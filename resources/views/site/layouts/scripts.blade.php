@@ -14,7 +14,7 @@
 <!-- Easy Waypoint -->
 <script src="{{ surl('js/easy-waypoint-animate.js') }}"></script>
 <!-- Magnific -->
-<script src="{{ surl('js/jquery.magnific-popup.min.jss') }}"></script>
+<script src="{{ surl('js/jquery.magnific-popup.min.js') }}"></script>
 <!-- Scripts -->
 <script src="{{ surl('js/scripts.js') }}"></script>
 <!-- Sly Our Portfolio -->

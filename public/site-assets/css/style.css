@@ -46,8 +46,6 @@ body {
     font-style: normal;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
-
 /**
  * 1.2 Source Sans Pro
  */
@@ -7988,4 +7986,8 @@ a.scroll-down:before {
     display: inline;
     text-align: center;
     width: 100%;
+}
+
+.fa, .far, .fas {
+    font-family: 'FontAwesome' !important;
 }

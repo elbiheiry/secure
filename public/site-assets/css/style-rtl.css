@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap');
+
+html,
+body {
+    font-family: 'Cairo', sans-serif !important;
+    height: 100%;
+}
+
+body {
+    text-align: right;
+}
+
+p,
+.btn-1,
+.btn-1:focus,
+.btn-2,
+.btn-3,
+.btn-4,
+.btn-4:focus,
+.btn-5,
+.btn-5:focus,
+.title1 h2 span,
+.title1 h2,
+.title1 h6,
+.btn-6,
+.btn-6:focus,
+.title2 h2,
+#section-navbar2 .navbar-expand-lg .navbar-nav .nav-link,
+#section-navbar2 .dropdown-item,
+#section-services1 .item h3,
+#section-howwework h1,
+#section-aboutus2.v3 .item h3,
+#section-cta2 .left h2,
+.title3 h2,
+#section-contact .contact-form input, #section-contact .contact-form textarea,
+#section-contact .contact-form input::placeholder, #section-contact .contact-form textarea::placeholder,
+#section-contact .contact-form button,
+#section-breadcrumb1 .content h1,
+#section-allstarted h1 strong,
+#section-allstarted .item h3,
+.title4 h2,
+.sidebar .category ul li a,
+#section-subscribe1 .subscribe input,
+#section-subscribe1 .subscribe button,
+#section-portfoliodetails1 .related-projects h2,
+#section-portfoliodetails1 .related-projects .overlay h3,
+#section-ourportfolio3 .portfolioContainer .overlay h3,
+#section-portfoliodetails1 .contents .sidebar-description .item h4,
+#section-contact h1{
+    font-family: 'Cairo', sans-serif !important;
+}
+
+#section-ourportfolio3 .portfolioContainer .overlay p {
+    font-size: 14px;
+    color: #fff;
+    letter-spacing: 0;
+}
+
+#section-breadcrumb1 li a {
+    font-family: 'Cairo', sans-serif !important;
+    letter-spacing: 0;
+}
+
+#section-allstarted .left h6 {
+    font-family: 'Cairo', sans-serif !important;
+    letter-spacing: 0;
+}
+
+#section-latestblog1 .item .content{
+    text-align: right;
+}
+
+.title3 h6 {
+    letter-spacing: 0;
+    font-family: 'Cairo', sans-serif !important;
+}
+
+#section-navbar2 .navbar-expand-lg .navbar-nav .nav-link {
+    padding: 0px 14px;
+}
+
+.fa-chevron-right:before {
+    content: "\f053";
+}
+
+.btn-3 i {
+    margin-left: unset;
+    margin-right: 4px;
+}
+
+#section-cta2 .right {
+    text-align: left;
+}
+
+.title3 {
+    text-align: left;
+}
+
+.main-footer .footer-list {
+    padding: 0 0 0 40px;
+}
+
+.main-footer .footer-title::after {
+    left: unset;
+    right: 0;
+}
+
+.title4 {
+    text-align: right;
+}
+
+.items-list li {
+    border-left: 0 solid var(--main-color);
+    border-right: 3px solid var(--main-color);
+}
+
+#section-navbar2 .wrap-dropdown li:hover .dropdown-item {
+    left: unset;
+    right: 15px;
+    transition: all 0.2s ease-in-out;
+}
+
+#section-breadcrumb1 li a {
+    margin-right: unset;
+    margin-left: 30px;
+}
+
+#section-breadcrumb1 li:not(:last-child) a:after {
+    margin-left: unset;
+    margin-right: 13px;
+    transform: rotate(180deg);
+}
+
+#section-subscribe1 .subscribe input {
+    margin-right: unset;
+    margin-left: 25px;
+}
+
+.solution-sec2 .title2 h2:after {
+    right: 0;
+    left: unset;
+}
+
+#section-ourportfolio3 .portfolioContainer .overlay .overlay-content {
+    left: unset;
+    right: 40px;
+}
+
+#section-ourportfolio3 .portfolioContainer .img-container .overlay {
+    right: 0;
+    left: unset;
+    text-align: right;
+}
+
+.careers-page .title2 h2:after {
+    left: unset;
+    right: 0;
+}
+
+@media only screen and (min-width: 1400px) {
+    .title2 {
+        left: unset;
+        right: 95px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    #section-allstarted .right:before {
+        left: unset;
+        right: -15px;
+    }
+
+    #section-services2 .right,
+    .section-services2 .right {
+        text-align: left;
+    }
+
+    #section-portfoliodetails1 .contents .project-description {
+        padding-right: 15px;
+        padding-left: 80px;
+    }
+
+    #section-portfoliodetails1 .contents .sidebar-description {
+        padding-right: 50px;
+        padding-left: unset;
+    }
+}
+
+@media only screen and (max-width: 991px)
+{
+    #section-navbar2 .v2 ul.navbar-nav {
+    padding-top: 25px;
+    padding-right: 0;
+    padding-left: 40px;
+}
+}
+
+.rtl .navbar-nav .nav-item+.nav-item, [dir=rtl] .navbar-nav .nav-item+.nav-item {
+    margin-right: unset;
+}
+
+.tp-parallax-wrap {
+    left: 0 !important;
+    right: 0;
+    text-align: center;
+    margin: auto;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.tp-loop-wrap {
+    text-align: center;
+    margin: auto;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}

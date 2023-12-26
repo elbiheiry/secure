@@ -18,7 +18,9 @@
                         data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
                     <!-- LAYERS -->
                     <!-- LAYER NR. 2 -->
-                    <div class="tp-caption  " id="slide-55-layer-4" data-x="['left','left','left','left']"
+                    
+                    @if (locale() == 'en')
+                        <div class="tp-caption  " id="slide-55-layer-4" data-x="['left','left','left','left']"
                         data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']"
                         data-voffset="['2','2','0','0']" data-fontsize="['60','60','50','30']"
                         data-lineheight="['80','80','70','40']" data-width="none" data-height="none"
@@ -27,10 +29,25 @@
                         data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
                         data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
                         style="z-index: 6; white-space: nowrap; font-size: 60px; line-height: 80px; font-weight: 400; color: #ffffff; letter-spacing: 0px;font-family:Quicksand;">
-                        Your Security is
+                        {{ locale() == 'en' ? 'Your Security is' : 'أمانكم هو' }}
                     </div>
+                    @else
+                        <div class="tp-caption  " id="slide-55-layer-4" data-x="['right','right','right','right']"
+                        data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']"
+                        data-voffset="['2','2','0','0']" data-fontsize="['50','50','50','30']"
+                        data-lineheight="['80','80','70','40']" data-width="none" data-height="none"
+                        data-whitespace="nowrap" data-type="text" data-responsive_offset="on" data-responsive="off"
+                        data-frames='[{"delay":800,"speed":1500,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"x:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+                        data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
+                        data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                        style="z-index: 6; white-space: nowrap; font-size: 60px; line-height: 80px; font-weight: 400; color: #ffffff; letter-spacing: 0px;font-family:cairo;">
+                        {{ locale() == 'en' ? 'Your Security is' : 'أمانكم هو' }}
+                    </div>
+                    @endif
                     <!-- LAYER NR. 3 -->
-                    <div class="tp-caption  " id="slide-55-layer-5" data-x="['left','left','left','left']"
+                    
+                    @if (locale() == 'en')
+                        <div class="tp-caption  " id="slide-55-layer-5" data-x="['left','left','left','left']"
                         data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']"
                         data-voffset="['82','82','70','45']" data-fontsize="['60','60','50','30']"
                         data-lineheight="['80','80','70','40']" data-width="none" data-height="none"
@@ -39,10 +56,24 @@
                         data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
                         data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
                         style="z-index: 7; white-space: nowrap; font-size: 60px; line-height: 80px; font-weight: 400; color: #ffffff; letter-spacing: 0px;font-family:Quicksand;">
-                        Our <strong>Commitment !</strong>
+                        {!! locale() == 'en' ? 'Our <strong>Commitment !</strong>' : 'ما نتعهد به!' !!}
                     </div>
+                    @else
+                        <div class="tp-caption  " id="slide-55-layer-5" data-x="['right','right','right','right']"
+                        data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']"
+                        data-voffset="['82','82','70','45']" data-fontsize="['50','50','50','30']"
+                        data-lineheight="['80','80','70','40']" data-width="none" data-height="none"
+                        data-whitespace="nowrap" data-type="text" data-responsive_offset="on" data-responsive="off"
+                        data-frames='[{"delay":800,"speed":1500,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"x:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+                        data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
+                        data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                        style="z-index: 7; white-space: nowrap; font-size: 60px; line-height: 80px; font-weight: 400; color: #ffffff; letter-spacing: 0px;font-family:cairo;">
+                        {!! locale() == 'en' ? 'Our <strong>Commitment !</strong>' : 'ما نتعهد به!' !!}
+                    </div>
+                    @endif
                     <!-- LAYER NR. 4 -->
-                    <div class="tp-caption rev-btn " id="slide-55-layer-9" data-x="['left','left','left','left']"
+                    @if (locale() == 'en')
+                        <div class="tp-caption rev-btn " id="slide-55-layer-9" data-x="['left','left','left','left']"
                         data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']"
                         data-voffset="['190','190','160','120']" data-lineheight="['30','25','25','25']" data-width="none"
                         data-height="none" data-whitespace="nowrap" data-type="button"
@@ -53,8 +84,23 @@
                         data-paddingright="[35,35,35,35]" data-paddingbottom="[12,12,12,12]"
                         data-paddingleft="[35,35,35,35]"
                         style="z-index: 8; white-space: nowrap; font-size: 16px; line-height: 30px; font-weight: 700; color: #0a0505;font-family:Quicksand;background-color:rgb(208,187,121);border-color:rgb(208,187,121);border-radius:3px 3px 3px 3px;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">
-                        <a href="{{ route('site.contact.index') }}">Contact us</a>
+                        <a href="{{ route('site.contact.index') }}">{{ locale() == 'en' ? 'Contact us' : 'تواصل معنا' }}</a>
                     </div>
+                    @else
+                        <div class="tp-caption rev-btn " id="slide-55-layer-9" data-x="['right','right','right','right']"
+                        data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']"
+                        data-voffset="['190','190','160','120']" data-lineheight="['30','25','25','25']" data-width="none"
+                        data-height="none" data-whitespace="nowrap" data-type="button"
+                        data-actions='[{"event":"click","action":"simplelink","target":"_self","url":"#","delay":""}]'
+                        data-responsive_offset="on" data-responsive="off"
+                        data-frames='[{"delay":2000,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.8;sY:0.8;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power4.easeOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"0","ease":"Linear.easeNone","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(0,0,0,1);bg:rgba(255,255,255,1);bs:solid;bw:0 0 0 0;"}]'
+                        data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[12,12,12,12]"
+                        data-paddingright="[35,35,35,35]" data-paddingbottom="[12,12,12,12]"
+                        data-paddingleft="[35,35,35,35]"
+                        style="z-index: 8; white-space: nowrap; font-size: 16px; line-height: 30px; font-weight: 700; color: #0a0505;font-family:cairo;background-color:rgb(208,187,121);border-color:rgb(208,187,121);border-radius:3px 3px 3px 3px;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">
+                        <a href="{{ route('site.contact.index') }}">{{ locale() == 'en' ? 'Contact us' : 'تواصل معنا' }}</a>
+                    </div>
+                    @endif
                 </li>
                 <!-- SLIDE  -->
                 <li data-index="rs-70" data-transition="slidingoverlayleft" data-slotamount="default"
@@ -68,7 +114,9 @@
                         data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
                     <!-- LAYERS -->
                     <!-- LAYER NR. 6 -->
-                    <div class="tp-caption  " id="slide-70-layer-4" data-x="['left','left','left','left']"
+                    
+                        @if (locale() == 'en')
+                        <div class="tp-caption  " id="slide-70-layer-4" data-x="['left','left','left','left']"
                         data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']"
                         data-voffset="['2','2','0','0']" data-fontsize="['60','60','50','30']"
                         data-lineheight="['80','80','70','40']" data-width="none" data-height="none"
@@ -77,9 +125,23 @@
                         data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
                         data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
                         style="z-index: 6; white-space: nowrap; font-size: 60px; line-height: 80px; font-weight: 400; color: #ffffff; letter-spacing: 0px;font-family:Quicksand;">
-                        Be Aware ....</div>
+                        {{ locale() == 'en' ? 'Be Aware' : 'خليك مستعد' }} ....</div>
+                    @else
+                        <div class="tp-caption  " id="slide-70-layer-4" data-x="['right','right','right','right']"
+                        data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']"
+                        data-voffset="['2','2','0','0']" data-fontsize="['50','50','50','30']"
+                        data-lineheight="['80','80','70','40']" data-width="none" data-height="none"
+                        data-whitespace="nowrap" data-type="text" data-responsive_offset="on" data-responsive="off"
+                        data-frames='[{"delay":800,"speed":1500,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"x:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+                        data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
+                        data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                        style="z-index: 6; white-space: nowrap; font-size: 60px; line-height: 80px; font-weight: 400; color: #ffffff; letter-spacing: 0px;font-family:cairo;">
+                        {{ locale() == 'en' ? 'Be Aware' : 'خليك مستعد' }} ....</div>
+                    @endif
                     <!-- LAYER NR. 7 -->
-                    <div class="tp-caption  " id="slide-70-layer-5" data-x="['left','left','left','left']"
+                    
+                    @if (locale() == 'en')
+                        <div class="tp-caption  " id="slide-70-layer-5" data-x="['left','left','left','left']"
                         data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']"
                         data-voffset="['82','82','70','45']" data-fontsize="['60','60','50','30']"
                         data-lineheight="['80','80','70','40']" data-width="none" data-height="none"
@@ -88,10 +150,25 @@
                         data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
                         data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
                         style="z-index: 7; white-space: nowrap; font-size: 60px; line-height: 80px; font-weight: 400; color: #ffffff; letter-spacing: 0px;font-family:Quicksand;">
-                        <strong>Be Secure !</strong>
+                        <strong>{{ locale() == 'en' ? 'Be Secure' : 'خليك بأمان' }} !</strong>
                     </div>
+                    @else
+                        <div class="tp-caption  " id="slide-70-layer-5" data-x="['right','right','right','right']"
+                        data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']"
+                        data-voffset="['82','82','70','45']" data-fontsize="['50','50','50','30']"
+                        data-lineheight="['80','80','70','40']" data-width="none" data-height="none"
+                        data-whitespace="nowrap" data-type="text" data-responsive_offset="on" data-responsive="off"
+                        data-frames='[{"delay":800,"speed":1500,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"x:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+                        data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
+                        data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                        style="z-index: 7; white-space: nowrap; font-size: 60px; line-height: 80px; font-weight: 400; color: #ffffff; letter-spacing: 0px;font-family:cairo;">
+                        <strong>{{ locale() == 'en' ? 'Be Secure' : 'خليك بأمان' }} !</strong>
+                    </div>
+                    @endif
                     <!-- LAYER NR. 8 -->
-                    <div class="tp-caption rev-btn " id="slide-70-layer-9" data-x="['left','left','left','left']"
+                    
+                    @if (locale() == 'en')
+                        <div class="tp-caption rev-btn " id="slide-70-layer-9" data-x="['left','left','left','left']"
                         data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']"
                         data-voffset="['190','190','160','120']" data-lineheight="['30','25','25','25']"
                         data-width="none" data-height="none" data-whitespace="nowrap" data-type="button"
@@ -102,8 +179,23 @@
                         data-paddingright="[35,35,35,35]" data-paddingbottom="[12,12,12,12]"
                         data-paddingleft="[35,35,35,35]"
                         style="z-index: 8; white-space: nowrap; font-size: 16px; line-height: 30px; font-weight: 700; color: #0a0505;font-family:Quicksand;background-color:rgb(208,187,121);border-color:rgb(208,187,121);border-radius:3px 3px 3px 3px;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">
-                        <a href="{{ route('site.contact.index') }}">Contact us</a>
+                        <a href="{{ route('site.contact.index') }}">{{ locale() == 'en' ? 'Contact us' : 'تواصل معنا' }}</a>
                     </div>
+                    @else
+                        <div class="tp-caption rev-btn " id="slide-70-layer-9" data-x="['right','right','right','right']"
+                        data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']"
+                        data-voffset="['190','190','160','120']" data-lineheight="['30','25','25','25']"
+                        data-width="none" data-height="none" data-whitespace="nowrap" data-type="button"
+                        data-actions='[{"event":"click","action":"simplelink","target":"_self","url":"#","delay":""}]'
+                        data-responsive_offset="on" data-responsive="off"
+                        data-frames='[{"delay":2000,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.8;sY:0.8;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power4.easeOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"0","ease":"Linear.easeNone","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(0,0,0,1);bg:rgba(255,255,255,1);bs:solid;bw:0 0 0 0;"}]'
+                        data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[12,12,12,12]"
+                        data-paddingright="[35,35,35,35]" data-paddingbottom="[12,12,12,12]"
+                        data-paddingleft="[35,35,35,35]"
+                        style="z-index: 8; white-space: nowrap; font-size: 16px; line-height: 30px; font-weight: 700; color: #0a0505;font-family:cairo;background-color:rgb(208,187,121);border-color:rgb(208,187,121);border-radius:3px 3px 3px 3px;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">
+                        <a href="{{ route('site.contact.index') }}">{{ locale() == 'en' ? 'Contact us' : 'تواصل معنا' }}</a>
+                    </div>
+                    @endif
                 </li>
                 <!-- SLIDE  -->
                 <li data-index="rs-71" data-transition="slidingoverlayleft" data-slotamount="default"
@@ -117,7 +209,9 @@
                         data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
                     <!-- LAYERS -->
                     <!-- LAYER NR. 10 -->
-                    <div class="tp-caption  " id="slide-71-layer-4" data-x="['left','left','left','left']"
+                    
+                    @if (locale() == 'en')
+                        <div class="tp-caption  " id="slide-71-layer-4" data-x="['left','left','left','left']"
                         data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']"
                         data-voffset="['2','2','0','0']" data-fontsize="['60','60','50','30']"
                         data-lineheight="['80','80','70','40']" data-width="none" data-height="none"
@@ -126,10 +220,25 @@
                         data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
                         data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
                         style="z-index: 6; white-space: nowrap; font-size: 60px; line-height: 80px; font-weight: 400; color: #ffffff; letter-spacing: 0px;font-family:Quicksand;">
-                        <strong><a href="{{ route('site.contact.index') }}">Contact us</a> </strong>
+                        <strong><a href="{{ route('site.contact.index') }}">{{ locale() == 'en' ? 'Contact us' : 'تواصل معنا' }}</a> </strong>
                     </div>
+                    @else
+                        <div class="tp-caption  " id="slide-71-layer-4" data-x="['right','right','right','right']"
+                        data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']"
+                        data-voffset="['2','2','0','0']" data-fontsize="['50','50','50','30']"
+                        data-lineheight="['80','80','70','40']" data-width="none" data-height="none"
+                        data-whitespace="nowrap" data-type="text" data-responsive_offset="on" data-responsive="off"
+                        data-frames='[{"delay":800,"speed":1500,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"x:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+                        data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
+                        data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                        style="z-index: 6; white-space: nowrap; font-size: 60px; line-height: 80px; font-weight: 400; color: #ffffff; letter-spacing: 0px;font-family:cairo;">
+                        <strong><a href="{{ route('site.contact.index') }}">{{ locale() == 'en' ? 'Contact us' : 'تواصل معنا' }}</a> </strong>
+                    </div>
+                    @endif
                     <!-- LAYER NR. 11 -->
-                    <div class="tp-caption  " id="slide-71-layer-5" data-x="['left','left','left','left']"
+                    
+                        @if (locale() == 'en')
+                        <div class="tp-caption  " id="slide-71-layer-5" data-x="['left','left','left','left']"
                         data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']"
                         data-voffset="['82','82','70','45']" data-fontsize="['60','60','50','30']"
                         data-lineheight="['80','80','70','40']" data-width="none" data-height="none"
@@ -138,9 +247,23 @@
                         data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
                         data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
                         style="z-index: 7; white-space: nowrap; font-size: 60px; line-height: 80px; font-weight: 400; color: #ffffff; letter-spacing: 0px;font-family:Quicksand;">
-                        for a Free Assessment</div>
+                        {{ locale() == 'en' ? 'for a Free Assessment' : 'للحصول على تقييم أمني مجاني.' }}</div>
+                    @else
+                        <div class="tp-caption  " id="slide-71-layer-5" data-x="['right','right','right','right']"
+                        data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']"
+                        data-voffset="['82','82','70','45']" data-fontsize="['50','50','50','30']"
+                        data-lineheight="['80','80','70','40']" data-width="none" data-height="none"
+                        data-whitespace="nowrap" data-type="text" data-responsive_offset="on" data-responsive="off"
+                        data-frames='[{"delay":800,"speed":1500,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"x:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+                        data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
+                        data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                        style="z-index: 7; white-space: nowrap; font-size: 60px; line-height: 80px; font-weight: 400; color: #ffffff; letter-spacing: 0px;font-family:cairo;">
+                        {{ locale() == 'en' ? 'for a Free Assessment' : 'للحصول على تقييم أمني مجاني.' }}</div>
+                    @endif
                     <!-- LAYER NR. 12 -->
-                    <div class="tp-caption rev-btn " id="slide-71-layer-9" data-x="['left','left','left','left']"
+                    
+                    @if (locale() == 'en')
+                        <div class="tp-caption rev-btn " id="slide-71-layer-9" data-x="['left','left','left','left']"
                         data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']"
                         data-voffset="['190','190','160','120']" data-lineheight="['30','25','25','25']"
                         data-width="none" data-height="none" data-whitespace="nowrap" data-type="button"
@@ -151,8 +274,23 @@
                         data-paddingright="[35,35,35,35]" data-paddingbottom="[12,12,12,12]"
                         data-paddingleft="[35,35,35,35]"
                         style="z-index: 8; white-space: nowrap; font-size: 16px; line-height: 30px; font-weight: 700; color: #0a0505;font-family:Quicksand;background-color:rgb(208,187,121);border-color:rgb(208,187,121);border-radius:3px 3px 3px 3px;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">
-                        <a href="{{ route('site.contact.index') }}">Contact us</a>
+                        <a href="{{ route('site.contact.index') }}">{{ locale() == 'en' ? 'Contact us' : 'تواصل معنا' }}</a
                     </div>
+                    @else
+                        <div class="tp-caption rev-btn " id="slide-71-layer-9" data-x="['right','right','right','right']"
+                        data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']"
+                        data-voffset="['190','190','160','120']" data-lineheight="['30','25','25','25']"
+                        data-width="none" data-height="none" data-whitespace="nowrap" data-type="button"
+                        data-actions='[{"event":"click","action":"simplelink","target":"_self","url":"#","delay":""}]'
+                        data-responsive_offset="on" data-responsive="off"
+                        data-frames='[{"delay":2000,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.8;sY:0.8;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power4.easeOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"0","ease":"Linear.easeNone","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(0,0,0,1);bg:rgba(255,255,255,1);bs:solid;bw:0 0 0 0;"}]'
+                        data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[12,12,12,12]"
+                        data-paddingright="[35,35,35,35]" data-paddingbottom="[12,12,12,12]"
+                        data-paddingleft="[35,35,35,35]"
+                        style="z-index: 8; white-space: nowrap; font-size: 16px; line-height: 30px; font-weight: 700; color: #0a0505;font-family:cairo;background-color:rgb(208,187,121);border-color:rgb(208,187,121);border-radius:3px 3px 3px 3px;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">
+                        <a href="{{ route('site.contact.index') }}">{{ locale() == 'en' ? 'Contact us' : 'تواصل معنا' }}</a
+                    </div>
+                    @endif
                 </li>
             </ul>
             <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>

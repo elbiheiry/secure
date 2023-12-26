@@ -34,8 +34,8 @@ class AppServiceProvider extends ServiceProvider
         Paginator::defaultView('pagination::bootstrap-4');
         view()->share([
             'locales' => config('translatable.locales'),
-            'allServices' => Service::all()->where('parent_id' , 0)->sortByDesc('id'),
-            'allSolutions' => Solution::all()->sortByDesc('id'),
+            'allServices' => Service::all()->where('parent_id' , 0),
+            'allSolutions' => Solution::all(),
             'links' => SocialMedia::all()
         ]);
     }

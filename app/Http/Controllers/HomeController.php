@@ -18,8 +18,8 @@ class HomeController extends Controller
     public function index()
     {
         $sliders = Slideshow::all()->sortByDesc('id');
-        $services = Service::all()->sortByDesc('id')->take(3);
-        $solutions = Solution::all()->sortByDesc('id');
+        $services = Service::all()->take(3);
+        $solutions = Solution::all();
         $articles = Article::all()->sortByDesc('id')->take(3);
         $branches = Branch::all();
 
@@ -86,7 +86,7 @@ class HomeController extends Controller
 
     public function partners()
     {
-        $clients = Client::all()->sortByDesc('id');
+        $clients = Client::all();
 
         return view('site.pages.partners' , ['clients' => $clients]);
     }

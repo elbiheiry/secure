@@ -17,11 +17,18 @@ class MemberRequest extends FormRequest
     public function rules()
     {
         $member = $this->isMethod('put') ? $this->member : null;
-        return [
+        $data =[
             'name' => ['required' , 'string' , 'max:255'],
-            'email' => ['required' , 'unique:members,email,'.$member->id],
-            'password' => $this->isMethod('post') ? ['required' , Password::min(8)->mixedCase()->uncompromised()->numbers()->symbols()] : ($this->password ? Password::min(8)->mixedCase()->uncompromised()->numbers()->symbols() : '')
         ];
+        if($this->isMethod('put')){
+            $data['email'] = ['required' , 'unique:members,email,'.$member->id];
+            $data['password'] = $this->password ? Password::min(8)->mixedCase()->uncompromised()->numbers()->symbols() : '';
+        }else{
+            $data['email'] = ['required' , 'unique:members,email'];
+            $data['password'] = ['required' , Password::min(8)->mixedCase()->uncompromised()->numbers()->symbols()];
+        }
+        
+        return $data;
     }
 
     public function attributes()

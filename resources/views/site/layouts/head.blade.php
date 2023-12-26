@@ -17,7 +17,11 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ surl('images/favicon.png') }}">
     <!-- Bootstrap 4 -->
-    <link rel="stylesheet" href="{{ surl('css/bootstrap.min.css') }}" type="text/css">
+    @if (locale() == 'en')
+        <link rel="stylesheet" href="{{ surl('css/bootstrap.min.css') }}" type="text/css">
+    @else
+        <link rel="stylesheet" href="{{ surl('css/bootstrap-rtl.min.css') }}" type="text/css">
+    @endif
     <!-- Swiper Slider -->
     <link rel="stylesheet" href="{{ surl('css/swiper.min.css') }}" type="text/css">
     <!-- Fonts -->
@@ -32,9 +36,10 @@
     <link rel="stylesheet" href="{{ surl('css/magnific-popup.css') }}" type="text/css">
     <!-- Style -->
     <link rel="stylesheet" href="{{ surl('css/style.css') }}" type="text/css">
+    @if (locale() == 'ar')
+        <link rel="stylesheet" href="{{ surl('css/style-rtl.css') }}" type="text/css">
+    @endif
     <!-- REVOLUTION SLIDER -->
-    <link href="http://fonts.googleapis.com/css?family=Quicksand:400%2C700%7COpen+Sans:400" rel="stylesheet"
-        property="stylesheet" type="text/css" media="all">
     <link rel="stylesheet" type="text/css"
         href="{{ surl('revslider2/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ surl('revslider2/fonts/font-awesome/css/font-awesome.css') }}">

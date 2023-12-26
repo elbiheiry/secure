@@ -9,20 +9,20 @@
                 Dashboard
             </a>
         </li>
-        <li class="sub-menu">
-            <a rel="noreferrer" href="javascript:void(0);">
-                <i class="fa fa-home"></i>
-                Home page
-                <i class="fa fa-angle-down"></i>
-            </a>
-            <ul style="display : {{ request()->is('admin/home') || request()->is('admin/home/*') ? 'block' : '' }}">
-                <li class="{{ request()->is('admin/home') || request()->is('admin/home/*') ? 'active' : '' }}">
-                    <a href="{{ route('admin.slides.index') }}">
-                        - Slideshow
-                    </a>
-                </li>
-            </ul>
-        </li>
+        <!--<li class="sub-menu">-->
+        <!--    <a rel="noreferrer" href="javascript:void(0);">-->
+        <!--        <i class="fa fa-home"></i>-->
+        <!--        Home page-->
+        <!--        <i class="fa fa-angle-down"></i>-->
+        <!--    </a>-->
+        <!--    <ul style="display : {{ request()->is('admin/home') || request()->is('admin/home/*') ? 'block' : '' }}">-->
+        <!--        <li class="{{ request()->is('admin/home') || request()->is('admin/home/*') ? 'active' : '' }}">-->
+        <!--            <a href="{{ route('admin.slides.index') }}">-->
+        <!--                - Slideshow-->
+        <!--            </a>-->
+        <!--        </li>-->
+        <!--    </ul>-->
+        <!--</li>-->
         <li class="sub-menu">
             <a rel="noreferrer" href="javascript:void(0);">
                 <i class="fa fa-info"></i>

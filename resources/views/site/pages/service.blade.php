@@ -20,79 +20,16 @@
     <div id="section-newsdetails1">
         <div class="container">
             <div class="row">
-                <!-- Contents -->
-                <div class="contents col-12 col-sm-12 col-md-12 col-lg-8">
-
-
-                    <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active" id="InformationSecurityStrategy" role="tabpanel"
-                            aria-labelledby="{{ $service->slug }}-tab">
-
-                            <!-- Posts Contents -->
-                            <img class="img-fluid main-image" src="{{ $service->image_path }}" alt="">
-                            {!! $service->translate(locale())->description !!}
-                            <!-- /.Post Contents -->
-                        </div>
-
-                        @foreach ($relates as $relate)
-                            <div class="tab-pane fade" id="{{ $relate->slug }}" role="tabpanel"
-                                aria-labelledby="{{ $relate->slug }}-tab">
-
-                                <!-- Posts Contents -->
-                                <img class="img-fluid main-image" src="{{ $relate->image_path }}" alt="">
-
-                                {!! $relate->translate(locale())->description !!}
-                            </div>
-                        @endforeach
-
-
-                    </div>
-                    @if (count($relates) > 0)
-                        <!-- Other Services -->
-                        <div class="related-posts">
-                            <h1>{{ locale() == 'en' ? 'Other Services' : 'خدمات أخري' }}</h1>
-                            <div class="row">
-                                <!-- Item -->
-                                @foreach ($relates as $relate)
-                                    <div class="item col-sm-12 col-md-6">
-                                        <a href="{{ route('site.service', ['service' => $service->slug]) }}">
-                                            <div class="img-container">
-                                                <img class="img-fluid" src="{{ $relate->image_path }}" alt="">
-                                                <div class="overlay">
-                                                    <div class="overlay-content">
-                                                        <i></i>
-                                                        <h3>{{ $relate->translate(locale())->name }}</h3>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                @endforeach
-                                <!-- /.Item -->
-                            </div>
-                        </div>
-                        <!-- /.Other Services -->
-                    @endif
-
-                </div>
-                <!-- /.Contents -->
-                <!-- Sidebar -->
+            	<!-- Sidebar -->
                 <div class="sidebar col-12 col-sm-12 col-md-12 col-lg-4">
                     <!-- Category -->
                     <div class="category">
                         <!-- List -->
                         <ul class="nav nav-tabs border-0" id="myTab" role="tablist">
-
-                            <li>
-                                <a class="active" id="{{ $service->slug }}-tab" data-toggle="tab"
-                                    data-target="#{{ $service->slug }}" type="button" role="tab"
-                                    aria-controls="{{ $service->slug }}" aria-selected="true">
-                                    {{ $service->translate(locale())->name }}
-                                </a>
-                            </li>
-                            @foreach ($relates as $relate)
+                            
+                            @foreach ($relates as $index => $relate)
                                 <li>
-                                    <a id="{{ $relate->slug }}-tab" data-toggle="tab" data-target="#{{ $relate->slug }}"
+                                    <a class="{{ $index == 0 ? 'active' : '' }}" id="{{ $relate->slug }}-tab" data-toggle="tab" data-target="#{{ $relate->slug }}"
                                         type="button" role="tab" aria-controls="{{ $relate->slug }}"
                                         aria-selected="false">
                                         {{ $relate->translate(locale())->name }}
@@ -105,6 +42,48 @@
                     <!-- /.Category -->
                 </div>
                 <!-- /.Sidebar -->
+                <!-- Contents -->
+                <div class="contents col-12 col-sm-12 col-md-12 col-lg-8">
+                    <div class="tab-content" id="myTabContent">
+                        @foreach ($relates as $index => $relate)
+                            <div class="tab-pane fade {{ $index == 0 ? 'show active' : '' }}" id="{{ $relate->slug }}" role="tabpanel"
+                                aria-labelledby="{{ $relate->slug }}-tab">
+                                <!-- Posts Contents -->
+                                <img class="img-fluid main-image" src="{{ $relate->image_path }}" alt="">
+
+                                {!! $relate->translate(locale())->description !!}
+                            </div>
+                        @endforeach
+                    </div>
+                    <!--@if (count($others) > 0)-->
+                        <!-- Other Services -->
+                    <!--    <div class="related-posts">-->
+                    <!--        <h1>{{ locale() == 'en' ? 'Other Services' : 'خدمات أخري' }}</h1>-->
+                    <!--        <div class="row">-->
+                                <!-- Item -->
+                    <!--            @foreach ($others as $other)-->
+                    <!--                <div class="item col-sm-12 col-md-6">-->
+                    <!--                    <a href="{{ route('site.service', ['service' => $other->slug]) }}">-->
+                    <!--                        <div class="img-container">-->
+                    <!--                            <img class="img-fluid" src="{{ $other->image_path }}" alt="">-->
+                    <!--                            <div class="overlay">-->
+                    <!--                                <div class="overlay-content">-->
+                    <!--                                    <i></i>-->
+                    <!--                                    <h3>{{ $other->translate(locale())->name }}</h3>-->
+                    <!--                                </div>-->
+                    <!--                            </div>-->
+                    <!--                        </div>-->
+                    <!--                    </a>-->
+                    <!--                </div>-->
+                    <!--            @endforeach-->
+                                <!-- /.Item -->
+                    <!--        </div>-->
+                    <!--    </div>-->
+                        <!-- /.Other Services -->
+                    <!--@endif-->
+
+                </div>
+                <!-- /.Contents -->
             </div>
         </div>
     </div>

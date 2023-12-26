@@ -29,8 +29,8 @@
                     <form action="{{ route('site.login') }}" method="post">
                         @csrf
                         @method('POST')
-                        <div class="row">
-                            <div class="form-group col-sm-12 col-md-12 col-lg-6">
+                        <div class="col-md-6" style="margin: 0 auto;">
+                            <div class="form-group col-md-12">
                                 <input type="email" class="form-control" name="email"
                                     placeholder="{{ locale() == 'en' ? 'Email' : 'البريد الإلكتروني' }}">
                                 @error('email')
@@ -40,7 +40,7 @@
                                 @enderror
                             </div>
 
-                            <div class="form-group col-sm-12 col-md-12 col-lg-6">
+                            <div class="form-group col-md-12">
                                 <input type="password" class="form-control" name="password"
                                     placeholder="{{ locale() == 'en' ? 'Password' : 'الرقم السري' }}">
                                 @error('password')

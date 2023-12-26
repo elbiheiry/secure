@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ locale() }}">
+<html lang="{{ locale() }}" @if(locale() == 'ar')dir="rtl"@endif>
 
 @include('site.layouts.head')
 
